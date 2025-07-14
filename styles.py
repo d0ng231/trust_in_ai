@@ -75,7 +75,7 @@ CUSTOM_CSS = """
         gap: 0.3rem;
     }
     .stRadio {
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.1rem;
     }
     .stTextArea > div > div > textarea {
         margin-bottom: 0.25rem;
@@ -109,8 +109,8 @@ CUSTOM_CSS = """
         margin-bottom: 0.25rem !important;
     }
     .element-container .stRadio {
-        margin-top: 0.25rem;
-        margin-bottom: 0.25rem;
+        margin-top: 0.15rem;
+        margin-bottom: 0.15rem;
     }
     .element-container {
         margin-bottom: 0.5rem;

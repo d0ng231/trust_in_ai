@@ -1,7 +1,7 @@
 import os
 
-OCTA_DIR = "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/OCTA_500_bnry"
-OUTPUT_DIR = "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/OCTA_500_bnry/results"
+OCTA_DIR = "./OCTA_500_bnry"
+OUTPUT_DIR = "./results"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -13,12 +13,6 @@ EXPLANATIONS = {
     "NPDR": """This OCTA DCP image indicates NPDR (Non-Proliferative Diabetic Retinopathy). The image shows moderate capillary dropout and irregular FAZ (foveal avascular zone) borders, with scattered microaneurysms visible as bright dots. The vascular changes are present but limited to the existing retinal vasculature without evidence of neovascularization. The capillary non-perfusion areas are smaller and less confluent compared to PDR.""",
     
     "Healthy": """This OCTA DCP image shows a healthy retinal vasculature pattern. The capillary network demonstrates uniform density with well-preserved flow throughout the macular region. The FAZ (foveal avascular zone) shows regular, smooth borders with appropriate size. There are no signs of capillary dropout, microaneurysms, or neovascularization. The vascular branching pattern appears normal with good perfusion in all quadrants."""
-}
-
-LABEL_COLORS = {
-    "PDR": "#d32f2f",
-    "NPDR": "#ff9800", 
-    "Healthy": "#4caf50"
 }
 
 SPECIALTIES = ["Ophthalmology", "Retina Specialist", "General Practice", "Optometry", "Medical Student", "Other"]
