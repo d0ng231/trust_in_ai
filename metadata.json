@@ -1,0 +1,59 @@
+[
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0800_OD.png",
+    "label": "PDR",
+    "explanation_type": "text",
+    "explanation": "This OCTA DCP image suggests PDR (Proliferative Diabetic Retinopathy) due to neovascularization primarily located at the 10–11 o’clock and 2–3 o’clock positions along the FAZ. The irregular, excessive vessel growth extending into the FAZ from the left-temporal and right-nasal regions indicates pathological angiogenesis. Additionally, significant capillary dropout is evident at the 6–7 o’clock and 9 o’clock positions, suggesting severe ischemia contributing to disease progression."
+  },
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0079_OD.png",
+    "label": "PDR",
+    "explanation_type": "text",
+    "explanation": "This OCTA DCP image suggests PDR, with neovascularization prominently seen at the 11–12 o’clock and 1–2 o’clock positions along the FAZ, where abnormal vessel proliferation extends into the avascular zone. Significant capillary dropout is evident at the 6–7 o’clock and 9 o’clock positions, where vascular density is notably reduced."
+  },
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0551_OD.png",
+    "label": "NPDR",
+    "explanation_type": "text",
+    "explanation": "This image suggests NPDR rather than PDR because it lacks neovascularization, as there are no abnormal vessels extending into the FAZ or forming new networks beyond normal capillary structures. Instead, it shows significant capillary dropout around the FAZ, particularly at the 10–11 o’clock and 3–4 o’clock positions, which is characteristic of NPDR but not exclusive to PDR. The presence of dilated and tortuous capillaries without proliferative growth further supports the diagnosis of NPDR rather than PDR."
+  },
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0031_OD.png",
+    "label": "PDR",
+    "explanation_type": "graph",
+    "explanation": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/DCP_overlay_cropped/0031_OD.png",
+    "csv_path": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/CSVs/PDR/0031_OD.csv"
+  },
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0079_OD.png",
+    "label": "PDR",
+    "explanation_type": "graph",
+    "explanation": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/DCP_overlay_cropped/0079_OD.png",
+    "csv_path": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/CSVs/PDR/0079_OD.csv"
+  },
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0551_OD.png",
+    "label": "NPDR",
+    "explanation_type": "graph",
+    "explanation": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/DCP_overlay_cropped/0551_OD.png",
+    "csv_path": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/CSVs/NPDR/0551_OD.csv"
+  },
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0800_OD.png",
+    "label": "PDR",
+    "explanation_type": "gradcam",
+    "explanation": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/CNN_gradcam/0800_OD.png"
+  },
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0079_OD.png",
+    "label": "PDR",
+    "explanation_type": "gradcam",
+    "explanation": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/CNN_gradcam/0079_OD.png"
+  },
+  {
+    "image_id": "/midtier/paetzollab/scratch/chl4044/unsloth/data/DCP_images/0551_OD.png",
+    "label": "NPDR",
+    "explanation_type": "gradcam",
+    "explanation": "/midtier/paetzollab/scratch/chl4044/Trust_in_AI_OCTA/data/CNN_gradcam/0551_OD.png"
+  }
+]

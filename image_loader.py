@@ -1,34 +1,41 @@
-import glob
+import json
 import os
-import random
 from PIL import Image
 import streamlit as st
-from config import OCTA_DIR, LABELS, EXPLANATIONS
+from config import OCTA_DIR, ENTRIES_FILE
 
-def load_random_octa_image():
+def load_octa_entry():
+    if 'entries' not in st.session_state:
+        with open(ENTRIES_FILE, 'r') as f:
+            st.session_state.entries = json.load(f)
+    if 'entry_index' not in st.session_state:
+        st.session_state.entry_index = 0
+    if not st.session_state.entries:
+        st.error(f"No entries in {ENTRIES_FILE}")
+        return None, None, None, None, None, None
+    entry = st.session_state.entries[st.session_state.entry_index % len(st.session_state.entries)]
+    st.session_state.entry_index += 1
+    image_path = os.path.join(OCTA_DIR, entry['image_id'])
     try:
-        image_files = glob.glob(os.path.join(OCTA_DIR, "*.png"))
-        
-        available_images = [img for img in image_files if img not in st.session_state.seen_images]
-        
-        if not available_images:
-            st.session_state.seen_images = []
-            available_images = image_files
-        
-        if not available_images:
-            st.error(f"No PNG files found in {OCTA_DIR}")
-            return None, None, None, None
-        
-        selected_image_path = random.choice(available_images)
-        st.session_state.seen_images.append(selected_image_path)
-        
-        selected_label = random.choice(LABELS)
-        selected_explanation = EXPLANATIONS[selected_label]
-        
-        image = Image.open(selected_image_path)
-        
-        return image, selected_label, selected_explanation, selected_image_path
-    
+        image = Image.open(image_path)
     except Exception as e:
-        st.error(f"Error loading image: {str(e)}")
-        return None, None, None, None
+        st.error(f"Error loading image: {e}")
+        return None, None, None, None, None, None
+    label = entry['label']
+    explanation_type = entry.get('explanation_type', 'text')
+    exp = entry['explanation']
+    if explanation_type in ['image', 'graph', 'gradcam']:
+        exp_path = exp if os.path.isabs(exp) else os.path.join(OCTA_DIR, exp)
+        try:
+            explanation = Image.open(exp_path)
+        except Exception as e:
+            st.error(f"Error loading explanation image: {e}")
+            explanation = None
+    else:
+        explanation = exp
+    csv_rel = entry.get('csv_path')
+    if csv_rel:
+        csv_path = csv_rel if os.path.isabs(csv_rel) else os.path.join(OCTA_DIR, csv_rel)
+    else:
+        csv_path = None
+    return image, label, explanation, explanation_type, image_path, csv_path

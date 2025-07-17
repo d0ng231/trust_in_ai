@@ -17,16 +17,22 @@ def initialize_session_state():
         st.session_state.current_label = None
     if 'current_explanation' not in st.session_state:
         st.session_state.current_explanation = None
+    if 'current_explanation_type' not in st.session_state:
+        st.session_state.current_explanation_type = None
+    if 'current_csv_path' not in st.session_state:
+        st.session_state.current_csv_path = None
     if 'assessments_count' not in st.session_state:
         st.session_state.assessments_count = 0
     if 'seen_images' not in st.session_state:
         st.session_state.seen_images = []
 
-def update_current_image(image, label, explanation, image_path):
+def update_current_image(image, label, explanation, explanation_type, image_path, csv_path):
     st.session_state.current_image = image
     st.session_state.current_label = label
     st.session_state.current_explanation = explanation
+    st.session_state.current_explanation_type = explanation_type
     st.session_state.current_image_path = image_path
+    st.session_state.current_csv_path = csv_path
     st.session_state.image_loaded = True
 
 def clear_responses():

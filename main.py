@@ -2,7 +2,7 @@ import streamlit as st
 from styles import CUSTOM_CSS
 from state_manager import initialize_session_state, update_current_image, clear_responses, increment_assessment_count
 from data_handler import save_assessment_to_json, prepare_assessment_data
-from image_loader import load_random_octa_image
+from image_loader import load_octa_entry
 from components import (
     render_pre_questionnaire,
     render_ai_classification,
@@ -28,9 +28,9 @@ else:
     st.markdown(f"**Name:** {st.session_state.user_info['name']}  |  **Assessments Completed:** {st.session_state.assessments_count}")
 
     if not st.session_state.image_loaded:
-        image, label, explanation, _ = load_random_octa_image()
+        image, label, explanation, explanation_type, path, csv = load_octa_entry()
         if image:
-            update_current_image(image, label, explanation, _)
+            update_current_image(image, label, explanation, explanation_type, path, csv)
 
     col1, col2, col3 = st.columns([1,1,1.5], gap="medium")
     with col1:
@@ -49,9 +49,9 @@ else:
             save_assessment_to_json(data)
             increment_assessment_count()
             clear_responses()
-            nxt, lbl, expl, _ = load_random_octa_image()
+            nxt, lbl, expl, expl_type, p, c = load_octa_entry()
             if nxt:
-                update_current_image(nxt, lbl, expl, _)
+                update_current_image(nxt, lbl, expl, expl_type, p, c)
                 st.rerun()
             else:
                 st.error("No more images available.")
