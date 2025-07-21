@@ -141,5 +141,46 @@ CUSTOM_CSS = """
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .chat-message {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+    }
+    .user-message {
+        background-color: #e3f2fd;
+        margin-left: 20%;
+    }
+    .ai-message {
+        background-color: #f5f5f5;
+        margin-right: 20%;
+    }
+    .message-content {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .message-time {
+        font-size: 11px;
+        color: #666;
+        position: absolute;
+        bottom: 2px;
+        right: 10px;
+    }
+    .chat-placeholder {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        text-align: center;
+        color: #666;
+    }
+    .chat-placeholder ul {
+        text-align: left;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .chat-placeholder li {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
 </style>
 """

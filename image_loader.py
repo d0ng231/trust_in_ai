@@ -15,17 +15,20 @@ def load_octa_entry():
         return None, None, None, None, None, None
     entry = st.session_state.entries[st.session_state.entry_index % len(st.session_state.entries)]
     st.session_state.entry_index += 1
-    image_path = os.path.join(OCTA_DIR, entry['image_id'])
+    
+    image_path = entry['image_id']
     try:
         image = Image.open(image_path)
     except Exception as e:
         st.error(f"Error loading image: {e}")
         return None, None, None, None, None, None
+    
     label = entry['label']
     explanation_type = entry.get('explanation_type', 'text')
     exp = entry['explanation']
+    
     if explanation_type in ['image', 'graph', 'gradcam']:
-        exp_path = exp if os.path.isabs(exp) else os.path.join(OCTA_DIR, exp)
+        exp_path = exp
         try:
             explanation = Image.open(exp_path)
         except Exception as e:
@@ -33,9 +36,7 @@ def load_octa_entry():
             explanation = None
     else:
         explanation = exp
-    csv_rel = entry.get('csv_path')
-    if csv_rel:
-        csv_path = csv_rel if os.path.isabs(csv_rel) else os.path.join(OCTA_DIR, csv_rel)
-    else:
-        csv_path = None
+    
+    csv_path = entry.get('csv_path')
+    
     return image, label, explanation, explanation_type, image_path, csv_path

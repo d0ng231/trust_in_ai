@@ -9,8 +9,8 @@
         "registration_timestamp": "2025-07-17T15:24:07.428993"
     },
     "session_started": "2025-07-17T15:24:45.473895",
-    "last_updated": "2025-07-17T16:55:52.878668",
-    "total_assessments": 130,
+    "last_updated": "2025-07-21T16:22:41.599479",
+    "total_assessments": 140,
     "assessments": [
         {
             "assessment_number": 1,
@@ -1961,6 +1961,124 @@
                 "trust_increased": "1",
                 "time_saving": "1"
             }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-17T17:00:40.060424",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-17T17:00:40.288991",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-17T17:00:40.718479",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-17T17:00:49.873318",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-17T17:00:50.279421",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-17T17:00:51.318257",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-21T16:17:18.168122",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {}
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-21T16:22:40.479334",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {}
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-21T16:22:41.148133",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {}
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-21T16:22:41.597949",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {}
         }
     ]
 }

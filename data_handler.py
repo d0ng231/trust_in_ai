@@ -5,6 +5,8 @@ import streamlit as st
 from config import OUTPUT_DIR
 
 def save_assessment_to_json(assessment_data):
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    
     user_name = st.session_state.user_info.get('name', 'unknown').replace(' ', '_')
     filename = f"{user_name}_assessments.json"
     filepath = os.path.join(OUTPUT_DIR, filename)
@@ -13,10 +15,9 @@ def save_assessment_to_json(assessment_data):
         try:
             with open(filepath, 'r') as f:
                 content = f.read().strip()
-                if content:  # Check if file has content
+                if content:
                     all_data = json.loads(content)
                 else:
-                    # File exists but is empty, create new structure
                     all_data = None
         except (json.JSONDecodeError, Exception) as e:
             st.warning(f"Existing file corrupted, creating new file: {e}")
@@ -27,7 +28,6 @@ def save_assessment_to_json(assessment_data):
             all_data['total_assessments'] = len(all_data['assessments'])
             all_data['last_updated'] = datetime.now().isoformat()
         else:
-            # Create new structure if file was empty or corrupted
             all_data = {
                 'user_info': st.session_state.user_info,
                 'session_started': datetime.now().isoformat(),

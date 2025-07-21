@@ -1,2 +1,10 @@
 streamlit
 Pillow
+torch
+transformers>=4.49.0
+accelerate
+peft
+trl
+tokenizers
+sentencepiece
+huggingface_hub
