@@ -13,10 +13,3 @@
 ├── components.py        # UI components
 └── requirements.txt     # Dependencies
 ```
-
-## Running
-
-```bash
-pip install -r requirements.txt
-streamlit run main.py
-```

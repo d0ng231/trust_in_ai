@@ -1,5 +1,8 @@
+# Core Streamlit and Web App
 streamlit
 Pillow
+
+# AI/ML Libraries
 torch
 transformers>=4.49.0
 accelerate
@@ -8,3 +11,10 @@ trl
 tokenizers
 sentencepiece
 huggingface_hub
+pandas
+
+# For Live Explanation API
+# The server itself, needs to be installed in the environment where you run the API
+llama-factory 
+# Client library to connect to the local OpenAI-compatible API
+openai

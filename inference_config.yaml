@@ -1,0 +1,5 @@
+model_name_or_path: OpenGVLab/InternVL3-38B-hf
+adapter_name_or_path: saves/intern_vl_3-38b/lora/sft
+finetuning_type: lora       
+template: intern_vl        
+infer_backend: huggingface 

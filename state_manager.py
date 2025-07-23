@@ -1,6 +1,7 @@
 import streamlit as st
 from datetime import datetime
 
+
 def initialize_session_state():
     if "user_registered" not in st.session_state:
         st.session_state.user_registered = False
@@ -35,7 +36,10 @@ def initialize_session_state():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
-def update_current_image(image, label, explanation, explanation_type, image_path, csv_path):
+
+def update_current_image(
+    image, label, explanation, explanation_type, image_path, csv_path
+):
     st.session_state.current_image = image
     st.session_state.current_label = label
     st.session_state.current_explanation = explanation
@@ -44,17 +48,26 @@ def update_current_image(image, label, explanation, explanation_type, image_path
     st.session_state.current_csv_path = csv_path
     st.session_state.image_loaded = True
     st.session_state.chat_history = []
+    if explanation_type == "text" and explanation:
+        st.session_state.chat_history.append(
+            {
+                "role": "ai",
+                "content": explanation,
+                "timestamp": datetime.now().strftime("%H:%M"),
+            }
+        )
+
 
 def clear_responses():
     st.session_state.responses = {}
 
+
 def increment_assessment_count():
     st.session_state.assessments_count += 1
 
+
 def add_chat_message(role, content):
     timestamp = datetime.now().strftime("%H:%M")
-    st.session_state.chat_history.append({
-        "role": role,
-        "content": content,
-        "timestamp": timestamp
-    })
+    st.session_state.chat_history.append(
+        {"role": role, "content": content, "timestamp": timestamp}
+    )

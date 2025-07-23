@@ -58,93 +58,83 @@ def _image_to_html(img):
     return f'<img src="data:image/png;base64,{img_str}" style="width:100%;border-radius:0px;" alt="Image"/>'
 
 def render_image_column():
-    st.markdown("### 📊 OCTA Scan")
+    st.markdown("### OCTA Scan")
     if st.session_state.image_loaded and st.session_state.current_image:
         html = _image_to_html(st.session_state.current_image)
         st.markdown(html, unsafe_allow_html=True)
 
 def render_explanation_column():
-    st.markdown("### 📝 AI Explanation")
-    if st.session_state.image_loaded and st.session_state.current_explanation:
-        et = st.session_state.current_explanation_type
-        if et == "text":
-            st.text_area(
-                "Model Explanation",
-                value=st.session_state.current_explanation,
-                height=400,
-                label_visibility="collapsed",
-                disabled=True
-            )
-        elif et == "graph":
-            html = _image_to_html(st.session_state.current_explanation)
-            st.markdown(html, unsafe_allow_html=True)
-            cp = st.session_state.current_csv_path
-            if cp:
+    if not st.session_state.image_loaded:
+        return
+    et = st.session_state.current_explanation_type
+    if et == "text":
+        return
+    st.markdown("### AI Explanation")
+    if et == "graph":
+        html = _image_to_html(st.session_state.current_explanation)
+        st.markdown(html, unsafe_allow_html=True)
+        cp = st.session_state.current_csv_path
+        if cp:
+            try:
+                with open(cp, "r") as f:
+                    lines = [l.rstrip("\n") for l in f]
+                feature_names = {
+                    "volume": "Vessel Volume",
+                    "length": "Vessel Length",
+                    "node1_degree": "Inward Connections",
+                    "node2_degree": "Outward Connections",
+                    "avgCrossSection": "Average Cross-Section",
+                    "distance": "Node Distance",
+                    "curveness": "Vessel Curvature",
+                    "avgRadiusAvg": "Average Radius",
+                    "avgRadiusStd": "Radius Variation",
+                    "roundnessAvg": "Vessel Roundness",
+                    "minRadiusAvg": "Minimum Radius",
+                    "hetero_degree": "Heterogeneous Degree",
+                }
+                feats = []
                 try:
-                    with open(cp, 'r') as f:
-                        lines = [l.rstrip("\n") for l in f]
-                    
-                    # Create lookup table for human-readable feature names
-                    feature_names = {
-                        "volume": "Vessel Volume",
-                        "length": "Vessel Length", 
-                        "node1_degree": "Inward Connections",
-                        "node2_degree": "Outward Connections",
-                        "avgCrossSection": "Average Cross-Section",
-                        "distance": "Node Distance",
-                        "curveness": "Vessel Curvature",
-                        "avgRadiusAvg": "Average Radius",
-                        "avgRadiusStd": "Radius Variation",
-                        "roundnessAvg": "Vessel Roundness",
-                        "minRadiusAvg": "Minimum Radius",
-                        "hetero_degree": "Heterogeneous Degree"
-                    }
-                    
-                    feats = []
-                    try:
-                        start = lines.index("Important Features for the Entire Graph:") + 1
-                    except ValueError:
-                        start = -1
-                    
-                    if start >= 0:
-                        # Skip the header line (feature,importance,reason)
-                        header_found = False
-                        for line in lines[start:]:
-                            if not line.strip() or line.startswith("Top k"):
-                                break
-                            if line.startswith("feature,importance"):
-                                header_found = True
-                                continue
-                            if not header_found:
-                                continue
-                                
-                            # Parse feature lines: "feature_name,importance_value,reason"
-                            parts = [p.strip() for p in line.split(",", 2)]
-                            if len(parts) >= 2:
-                                feature_name = parts[0]
-                                importance = parts[1]
-                                
-                                # Use lookup table or original name
-                                display_name = feature_names.get(feature_name, feature_name.replace("_", " ").title())
-                                
-                                feats.append({
-                                    "Feature": display_name, 
-                                    "Importance": f"{float(importance):.3f}"
-                                })
-                    
-                    if feats:
-                        # Show only top 3 features (skip the first row which might be headers)
-                        df = pd.DataFrame(feats[:3])
-                        st.write("Top 3 Important Graph Features")
-                        st.table(df)
-                except Exception as e:
-                    st.warning(f"Could not load feature data: {e}")
-        else:
-            html = _image_to_html(st.session_state.current_explanation)
-            st.markdown(html, unsafe_allow_html=True)
+                    start = lines.index(
+                        "Important Features for the Entire Graph:"
+                    ) + 1
+                except ValueError:
+                    start = -1
+                if start >= 0:
+                    header_found = False
+                    for line in lines[start:]:
+                        if not line.strip() or line.startswith("Top k"):
+                            break
+                        if line.startswith("feature,importance"):
+                            header_found = True
+                            continue
+                        if not header_found:
+                            continue
+                        parts = [p.strip() for p in line.split(",", 2)]
+                        if len(parts) >= 2:
+                            feature_name = parts[0]
+                            importance = parts[1]
+                            display_name = feature_names.get(
+                                feature_name,
+                                feature_name.replace("_", " ").title(),
+                            )
+                            feats.append(
+                                {
+                                    "Feature": display_name,
+                                    "Importance": f"{float(importance):.3f}",
+                                }
+                            )
+                if feats:
+                    df = pd.DataFrame(feats[:3])
+                    st.write("Top 3 Important Graph Features")
+                    st.table(df)
+            except Exception as e:
+                st.warning(f"Could not load feature data: {e}")
+    else:
+        html = _image_to_html(st.session_state.current_explanation)
+        st.markdown(html, unsafe_allow_html=True)
 
 def render_questions_column():
-    st.markdown("### ✅ Assessment Questions")
+    st.markdown("### Assessment Questions")
     st.markdown("**For questions 2–7, please rate your agreement on a scale from 1 (Strongly Disagree) to 5 (Strongly Agree).**")
     likert = ["1", "2", "3", "4", "5"]
     with st.container():
@@ -172,6 +162,6 @@ def render_footer():
     st.markdown("---")
     st.markdown(f"""
     <p style="text-align: center; color: #666; font-size: 12px; margin-top: 5px;">
-        OCTA DR Classification v1.0 | For Research Purposes Only
+        OCTA DR Classification v1.5 | For Research Purposes Only
     </p>
     """, unsafe_allow_html=True)

@@ -1,62 +1,68 @@
-import torch
-from transformers import AutoProcessor, AutoModelForVision2Seq
-from config import MODEL_PATH, DEVICE
+from openai import OpenAI
+from PIL import Image
+import base64, io
+from config import SYSTEM_PROMPT_TEMPLATE
 
-processor = AutoProcessor.from_pretrained(MODEL_PATH)
-model = AutoModelForVision2Seq.from_pretrained(MODEL_PATH).to(DEVICE)
+client = OpenAI(api_key="0", base_url="http://localhost:8000/v1")
+MODEL_ID = "/midtier/paetzollab/scratch/chl4044/LLaMA-Factory/output/intern_vl_3-38b_lora_sft"
 
-def classify_and_explain(image):
-    pixel_values = processor(images=image, return_tensors="pt").pixel_values.to(DEVICE)
-    outputs = model.generate(pixel_values, max_new_tokens=4096)
-    text = processor.decode(outputs[0], skip_special_tokens=True)
-    parts = text.split("\n", 1)
-    label = parts[0].strip()
-    explanation = parts[1].strip() if len(parts) > 1 else ""
-    return label, explanation
 
-def ask_question(image, question):
-    messages = [
+def _img_to_b64(img: Image.Image) -> str:
+    buf = io.BytesIO()
+    img.save(buf, format="PNG")
+    return base64.b64encode(buf.getvalue()).decode()
+
+
+def ask_question(image: Image.Image, question: str, classification: str | None = None) -> str:
+    messages = []
+    if classification:
+        messages.append(
+            {
+                "role": "system",
+                "content": SYSTEM_PROMPT_TEMPLATE.format(classification=classification),
+            }
+        )
+    messages.append(
         {
-            "role": "user", 
+            "role": "user",
             "content": [
-                {"type": "image", "image": image},
-                {"type": "text", "text": question}
-            ]
+                {
+                    "type": "image_url",
+                    "image_url": {"url": f"data:image/png;base64,{_img_to_b64(image)}"},
+                },
+                {"type": "text", "text": question},
+            ],
         }
-    ]
-    
-    text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-    image_inputs, video_inputs = process_vision_info(messages)
-    
-    inputs = processor(
-        text=[text],
-        images=image_inputs,
-        videos=video_inputs,
-        padding=True,
-        return_tensors="pt"
-    ).to(DEVICE)
-    
-    with torch.no_grad():
-        generated_ids = model.generate(**inputs, max_new_tokens=128)
-    
-    generated_ids_trimmed = [
-        out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
-    ]
-    
-    output_text = processor.batch_decode(
-        generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
     )
-    
-    return output_text[0] if output_text else "No response generated."
+    try:
+        resp = client.chat.completions.create(
+            model=MODEL_ID, messages=messages, temperature=0.2
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception:
+        fallback_msgs = []
+        if classification:
+            fallback_msgs.append(
+                {
+                    "role": "system",
+                    "content": SYSTEM_PROMPT_TEMPLATE.format(classification=classification),
+                }
+            )
+        fallback_msgs.append(
+            {
+                "role": "user",
+                "content": f"<image>{_img_to_b64(image)}</image>\n\n{question}",
+            }
+        )
+        resp = client.chat.completions.create(
+            model=MODEL_ID, messages=fallback_msgs, temperature=0.2
+        )
+        return resp.choices[0].message.content.strip()
 
-def process_vision_info(conversations):
-    image_inputs = []
-    video_inputs = []
-    for message in conversations:
-        if isinstance(message["content"], list):
-            for ele in message["content"]:
-                if ele["type"] == "image":
-                    image_inputs.append(ele["image"])
-                elif ele["type"] == "video":
-                    video_inputs.append(ele["video"])
-    return image_inputs if image_inputs else None, video_inputs if video_inputs else None
+
+def generate_explanation(image: Image.Image, classification: str) -> str:
+    prompt = (
+        f"Generate a concise paragraph explaining why this OCTA image is classified as "
+        f"{classification}. Focus on the specific regions that support this diagnosis."
+    )
+    return ask_question(image, prompt, classification)

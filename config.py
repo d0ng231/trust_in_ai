@@ -4,7 +4,13 @@ import torch
 OCTA_DIR = "/midtier/paetzollab/scratch/chl4044/streamlit_ui_trust_in_ai/OCTA_500_bnry"
 OUTPUT_DIR = "/midtier/paetzollab/scratch/chl4044/streamlit_ui_trust_in_ai/results"
 ENTRIES_FILE = "metadata.json"
-MODEL_PATH = "Qwen/Qwen2.5-VL-7B-Instruct"
+GENERATE_LIVE_EXPLANATION = False  
+SYSTEM_PROMPT_TEMPLATE = (
+    "You are an ophthalmology AI assistant. "
+    "The OCT‑A image has been classified as **{classification}**. "
+    "Stick to that classification and focus on specific regions of the image "
+    "that support it."
+)
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 LABELS = ["PDR", "NPDR", "Healthy"]
 SPECIALTIES = ["Ophthalmology", "Retina Specialist", "General Practice", "Optometry", "Medical Student", "Other"]
