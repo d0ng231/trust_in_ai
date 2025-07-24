@@ -1,8 +1,8 @@
 import os
 import torch
 
-OCTA_DIR = "/midtier/paetzollab/scratch/chl4044/streamlit_ui_trust_in_ai/OCTA_500_bnry"
-OUTPUT_DIR = "/midtier/paetzollab/scratch/chl4044/streamlit_ui_trust_in_ai/results"
+OCTA_DIR = "data/DCP_images"
+OUTPUT_DIR = "results"
 ENTRIES_FILE = "metadata.json"
 GENERATE_LIVE_EXPLANATION = False
 EVALUATION_MODE = False
