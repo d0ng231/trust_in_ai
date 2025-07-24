@@ -37,6 +37,8 @@ def initialize_session_state():
         st.session_state.chat_history = []
     if "all_cases_completed" not in st.session_state:
         st.session_state.all_cases_completed = False
+    if "case_start_time" not in st.session_state:
+        st.session_state.case_start_time = None
 
 
 def update_current_image(
@@ -50,6 +52,7 @@ def update_current_image(
     st.session_state.current_csv_path = csv_path
     st.session_state.image_loaded = True
     st.session_state.chat_history = []
+    st.session_state.case_start_time = datetime.now()
     if explanation_type == "text" and explanation:
         st.session_state.chat_history.append(
             {

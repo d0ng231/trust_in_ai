@@ -1,172 +1,296 @@
 {
     "user_info": {
         "name": "Matt",
-        "specialty": "Ophthalmology",
-        "years_experience": "< 1 year",
-        "octa_experience": "None",
+        "specialty": "Retina Specialist",
+        "years_experience": "5-10 years",
+        "octa_experience": "Basic",
         "ai_familiarity": "Not familiar",
-        "institution": "",
-        "registration_timestamp": "2025-07-24T10:49:56.626014"
+        "institution": "WCM",
+        "registration_timestamp": "2025-07-24T14:05:58.022585"
     },
-    "session_started": "2025-07-24T10:52:07.401308",
-    "last_updated": "2025-07-24T13:18:34.403350",
-    "total_assessments": 67,
+    "session_started": "2025-07-24T14:06:12.123712",
+    "last_updated": "2025-07-24T14:34:49.524578",
+    "total_assessments": 18,
     "assessments": [
         {
             "assessment_number": 1,
-            "timestamp": "2025-07-24T10:52:07.400592",
+            "timestamp": "2025-07-24T14:06:12.123154",
             "image_filename": "0800_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 13.975676,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+                "features_highlighted": "3",
+                "localization_correct": "4",
+                "explanation_like": "3",
+                "trust_increased": "2",
+                "time_saving": "4"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This OCTA DCP image suggests PDR (Proliferative Diabetic Retinopathy) due to neovascularization primarily located at the 10\u201311 o\u2019clock and 2\u20133 o\u2019clock positions along the FAZ. The irregular, excessive vessel growth extending into the FAZ from the left-temporal and right-nasal regions indicates pathological angiogenesis. Additionally, significant capillary dropout is evident at the 6\u20137 o\u2019clock and 9 o\u2019clock positions, suggesting severe ischemia contributing to disease progression.",
+                    "timestamp": "14:05"
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the vessel patterns in this image.",
+                    "timestamp": "14:06"
+                },
+                {
+                    "role": "ai",
+                    "content": "This image shows a markedly irregular and enlarged foveal avascular zone (FAZ) with an irregular, jagged contour. The surrounding capillary network is sparse and discontinuous, with focal areas of capillary non-perfusion. There are also fine, tortuous neovascular fronds extending beyond the normal capillary boundary, indicating new vessel growth. These features are consistent with proliferative diabetic retinopathy.",
+                    "timestamp": "14:06"
+                }
+            ]
         },
         {
             "assessment_number": 2,
-            "timestamp": "2025-07-24T10:52:09.791912",
+            "timestamp": "2025-07-24T14:06:34.248550",
             "image_filename": "0079_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 22.121626,
             "responses": {
                 "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
+                "confidence": "3",
+                "features_highlighted": "3",
+                "localization_correct": "2",
                 "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+                "trust_increased": "5",
+                "time_saving": "2"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This OCTA DCP image suggests PDR, with neovascularization prominently seen at the 11\u201312 o\u2019clock and 1\u20132 o\u2019clock positions along the FAZ, where abnormal vessel proliferation extends into the avascular zone. Significant capillary dropout is evident at the 6\u20137 o\u2019clock and 9 o\u2019clock positions, where vascular density is notably reduced.",
+                    "timestamp": "14:06"
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the vessel patterns in this image.",
+                    "timestamp": "14:06"
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the vessel patterns in this image.",
+                    "timestamp": "14:06"
+                },
+                {
+                    "role": "ai",
+                    "content": "This image shows a markedly irregular FAZ with an enlarged, scalloped contour. The surrounding capillary network is patchy and discontinuous, with areas of non-perfusion and focal capillary dropout. There are also fine, tortuous vessels extending beyond the normal capillary boundary, indicative of neovascularization. These features are consistent with proliferative diabetic retinopathy.",
+                    "timestamp": "14:06"
+                },
+                {
+                    "role": "user",
+                    "content": "tell me a joke ",
+                    "timestamp": "14:06"
+                },
+                {
+                    "role": "ai",
+                    "content": "Why don't scientists trust atoms?\n\nBecause they make up everything!",
+                    "timestamp": "14:06"
+                }
+            ]
         },
         {
             "assessment_number": 3,
-            "timestamp": "2025-07-24T10:52:10.865295",
+            "timestamp": "2025-07-24T14:06:41.491973",
             "image_filename": "0551_OD.png",
             "ai_classification": "NPDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 7.221932,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
+                "features_highlighted": "2",
+                "localization_correct": "2",
                 "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+                "trust_increased": "2",
+                "time_saving": "2"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This image suggests NPDR rather than PDR because it lacks neovascularization, as there are no abnormal vessels extending into the FAZ or forming new networks beyond normal capillary structures. Instead, it shows significant capillary dropout around the FAZ, particularly at the 10\u201311 o\u2019clock and 3\u20134 o\u2019clock positions, which is characteristic of NPDR but not exclusive to PDR. The presence of dilated and tortuous capillaries without proliferative growth further supports the diagnosis of NPDR rather than PDR.",
+                    "timestamp": "14:06"
+                }
+            ]
         },
         {
             "assessment_number": 4,
-            "timestamp": "2025-07-24T10:52:20.558840",
+            "timestamp": "2025-07-24T14:06:51.160263",
             "image_filename": "0031_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 9.663077,
             "responses": {
                 "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+                "confidence": "5",
+                "features_highlighted": "2",
+                "localization_correct": "4",
+                "explanation_like": "5",
+                "trust_increased": "3",
+                "time_saving": "2"
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 5,
-            "timestamp": "2025-07-24T10:52:22.170924",
+            "timestamp": "2025-07-24T14:06:59.750225",
             "image_filename": "0079_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 8.585727,
             "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
+                "prediction_correct": "No",
+                "confidence": "4",
                 "features_highlighted": "1",
-                "localization_correct": "1",
+                "localization_correct": "2",
                 "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+                "trust_increased": "5",
+                "time_saving": "3",
+                "correct_label": "Healthy"
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 6,
-            "timestamp": "2025-07-24T10:52:23.749340",
+            "timestamp": "2025-07-24T14:07:07.825675",
             "image_filename": "0551_OD.png",
             "ai_classification": "NPDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 8.071137,
             "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
+                "prediction_correct": "No",
+                "confidence": "4",
+                "features_highlighted": "3",
                 "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+                "explanation_like": "2",
+                "trust_increased": "4",
+                "time_saving": "1",
+                "correct_label": "PDR"
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 7,
-            "timestamp": "2025-07-24T10:52:27.251122",
+            "timestamp": "2025-07-24T14:07:12.382175",
             "image_filename": "0800_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 4.552227,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
                 "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
+                "localization_correct": "4",
+                "explanation_like": "4",
+                "trust_increased": "4",
                 "time_saving": "1"
-            }
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 8,
-            "timestamp": "2025-07-24T10:52:28.186283",
+            "timestamp": "2025-07-24T14:07:17.066083",
             "image_filename": "0079_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 4.678811,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
+                "features_highlighted": "3",
+                "localization_correct": "5",
                 "explanation_like": "1",
-                "trust_increased": "1",
+                "trust_increased": "2",
                 "time_saving": "1"
-            }
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 9,
-            "timestamp": "2025-07-24T10:52:28.864151",
+            "timestamp": "2025-07-24T14:07:23.107444",
             "image_filename": "0551_OD.png",
             "ai_classification": "NPDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 6.025878,
             "responses": {
                 "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
+                "confidence": "5",
+                "features_highlighted": "5",
                 "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
+                "explanation_like": "5",
+                "trust_increased": "3",
                 "time_saving": "1"
-            }
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 1,
-            "timestamp": "2025-07-24T11:42:33.833271",
+            "timestamp": "2025-07-24T14:34:11.879702",
             "image_filename": "0800_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 42.731216,
             "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
+                "prediction_correct": "No",
+                "confidence": "4",
+                "features_highlighted": "4",
+                "localization_correct": "3",
                 "explanation_like": "1",
                 "trust_increased": "1",
-                "time_saving": "1"
-            }
+                "time_saving": "1",
+                "correct_label": "Healthy"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This OCTA DCP image suggests PDR (Proliferative Diabetic Retinopathy) due to neovascularization primarily located at the 10\u201311 o\u2019clock and 2\u20133 o\u2019clock positions along the FAZ. The irregular, excessive vessel growth extending into the FAZ from the left-temporal and right-nasal regions indicates pathological angiogenesis. Additionally, significant capillary dropout is evident at the 6\u20137 o\u2019clock and 9 o\u2019clock positions, suggesting severe ischemia contributing to disease progression.",
+                    "timestamp": "14:33"
+                },
+                {
+                    "role": "user",
+                    "content": "What signs of diabetic retinopathy do you see?",
+                    "timestamp": "14:33"
+                },
+                {
+                    "role": "ai",
+                    "content": "This image shows proliferative diabetic retinopathy (PDR). There is extensive capillary non-perfusion around the foveal avascular zone, with irregular, tuft-like neovascular complexes extending beyond the normal capillary network. The FAZ is markedly enlarged and irregular, and you can see fine, abnormal vessel sprouts in the parafoveal region.",
+                    "timestamp": "14:33"
+                },
+                {
+                    "role": "user",
+                    "content": "What areas show abnormal vasculature?",
+                    "timestamp": "14:33"
+                },
+                {
+                    "role": "ai",
+                    "content": "The parafoveal region demonstrates irregular vessel loops and focal dilations, consistent with neovascular complexes. Additionally, there is a dense capillary non-perfusion zone in the inferotemporal quadrant, indicating ischemic remodeling.",
+                    "timestamp": "14:33"
+                },
+                {
+                    "role": "user",
+                    "content": "tell me a joke",
+                    "timestamp": "14:33"
+                },
+                {
+                    "role": "ai",
+                    "content": "Why don't scientists trust atoms?\n\nBecause they make up everything!",
+                    "timestamp": "14:33"
+                }
+            ]
         },
         {
             "assessment_number": 2,
-            "timestamp": "2025-07-24T11:42:34.981482",
+            "timestamp": "2025-07-24T14:34:14.076562",
             "image_filename": "0079_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 2.191784,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
@@ -175,13 +299,22 @@
                 "explanation_like": "1",
                 "trust_increased": "1",
                 "time_saving": "1"
-            }
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This OCTA DCP image suggests PDR, with neovascularization prominently seen at the 11\u201312 o\u2019clock and 1\u20132 o\u2019clock positions along the FAZ, where abnormal vessel proliferation extends into the avascular zone. Significant capillary dropout is evident at the 6\u20137 o\u2019clock and 9 o\u2019clock positions, where vascular density is notably reduced.",
+                    "timestamp": "14:34"
+                }
+            ]
         },
         {
             "assessment_number": 3,
-            "timestamp": "2025-07-24T11:42:35.934847",
+            "timestamp": "2025-07-24T14:34:15.086790",
             "image_filename": "0551_OD.png",
             "ai_classification": "NPDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 1.00508,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
@@ -190,73 +323,40 @@
                 "explanation_like": "1",
                 "trust_increased": "1",
                 "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 1,
-            "timestamp": "2025-07-24T11:44:57.697061",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 2,
-            "timestamp": "2025-07-24T11:44:58.654367",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 3,
-            "timestamp": "2025-07-24T11:44:59.345936",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This image suggests NPDR rather than PDR because it lacks neovascularization, as there are no abnormal vessels extending into the FAZ or forming new networks beyond normal capillary structures. Instead, it shows significant capillary dropout around the FAZ, particularly at the 10\u201311 o\u2019clock and 3\u20134 o\u2019clock positions, which is characteristic of NPDR but not exclusive to PDR. The presence of dilated and tortuous capillaries without proliferative growth further supports the diagnosis of NPDR rather than PDR.",
+                    "timestamp": "14:34"
+                }
+            ]
         },
         {
             "assessment_number": 4,
-            "timestamp": "2025-07-24T11:45:00.276380",
+            "timestamp": "2025-07-24T14:34:38.175186",
             "image_filename": "0031_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 23.082423,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
                 "features_highlighted": "1",
                 "localization_correct": "1",
                 "explanation_like": "1",
-                "trust_increased": "1",
+                "trust_increased": "5",
                 "time_saving": "1"
-            }
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 5,
-            "timestamp": "2025-07-24T11:45:12.362936",
+            "timestamp": "2025-07-24T14:34:39.460091",
             "image_filename": "0079_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 1.280111,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
@@ -265,13 +365,16 @@
                 "explanation_like": "1",
                 "trust_increased": "1",
                 "time_saving": "1"
-            }
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 6,
-            "timestamp": "2025-07-24T11:45:14.154544",
+            "timestamp": "2025-07-24T14:34:47.065420",
             "image_filename": "0551_OD.png",
             "ai_classification": "NPDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 7.600407,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
@@ -280,193 +383,16 @@
                 "explanation_like": "1",
                 "trust_increased": "1",
                 "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 1,
-            "timestamp": "2025-07-24T12:04:18.046617",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 2,
-            "timestamp": "2025-07-24T12:04:18.671691",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 3,
-            "timestamp": "2025-07-24T12:04:19.252640",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 4,
-            "timestamp": "2025-07-24T12:04:20.203392",
-            "image_filename": "0031_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 5,
-            "timestamp": "2025-07-24T12:04:21.243522",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 6,
-            "timestamp": "2025-07-24T12:04:21.972871",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 1,
-            "timestamp": "2025-07-24T12:53:10.841605",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 2,
-            "timestamp": "2025-07-24T12:53:11.873824",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 3,
-            "timestamp": "2025-07-24T12:53:20.447529",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 4,
-            "timestamp": "2025-07-24T12:53:28.559672",
-            "image_filename": "0031_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 5,
-            "timestamp": "2025-07-24T12:53:29.131097",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 6,
-            "timestamp": "2025-07-24T12:53:47.508438",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 7,
-            "timestamp": "2025-07-24T12:53:48.164679",
+            "timestamp": "2025-07-24T14:34:47.880492",
             "image_filename": "0800_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 0.81007,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
@@ -475,13 +401,16 @@
                 "explanation_like": "1",
                 "trust_increased": "1",
                 "time_saving": "1"
-            }
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 8,
-            "timestamp": "2025-07-24T12:53:49.028894",
+            "timestamp": "2025-07-24T14:34:48.705227",
             "image_filename": "0079_OD.png",
             "ai_classification": "PDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 0.80464,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
@@ -490,13 +419,16 @@
                 "explanation_like": "1",
                 "trust_increased": "1",
                 "time_saving": "1"
-            }
+            },
+            "chat_history": []
         },
         {
             "assessment_number": 9,
-            "timestamp": "2025-07-24T12:53:49.980250",
+            "timestamp": "2025-07-24T14:34:49.519711",
             "image_filename": "0551_OD.png",
             "ai_classification": "NPDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 0.808968,
             "responses": {
                 "prediction_correct": "Yes",
                 "confidence": "1",
@@ -505,517 +437,8 @@
                 "explanation_like": "1",
                 "trust_increased": "1",
                 "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 10,
-            "timestamp": "2025-07-24T12:53:57.412738",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 11,
-            "timestamp": "2025-07-24T12:53:58.026968",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 12,
-            "timestamp": "2025-07-24T12:53:58.550526",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 13,
-            "timestamp": "2025-07-24T12:54:00.246043",
-            "image_filename": "0031_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 14,
-            "timestamp": "2025-07-24T12:54:01.149527",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 15,
-            "timestamp": "2025-07-24T12:54:01.692490",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 16,
-            "timestamp": "2025-07-24T12:54:02.740770",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 1,
-            "timestamp": "2025-07-24T12:58:40.028226",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 2,
-            "timestamp": "2025-07-24T12:58:41.867725",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 3,
-            "timestamp": "2025-07-24T12:58:42.983892",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 4,
-            "timestamp": "2025-07-24T12:58:44.484763",
-            "image_filename": "0031_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 5,
-            "timestamp": "2025-07-24T12:58:46.254113",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 6,
-            "timestamp": "2025-07-24T12:58:47.109387",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 7,
-            "timestamp": "2025-07-24T12:58:48.045907",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 8,
-            "timestamp": "2025-07-24T12:58:48.746507",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 9,
-            "timestamp": "2025-07-24T12:58:49.618216",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 1,
-            "timestamp": "2025-07-24T13:02:00.086095",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 2,
-            "timestamp": "2025-07-24T13:02:01.342006",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 3,
-            "timestamp": "2025-07-24T13:02:02.231089",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 4,
-            "timestamp": "2025-07-24T13:02:03.836530",
-            "image_filename": "0031_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 5,
-            "timestamp": "2025-07-24T13:02:05.170431",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 6,
-            "timestamp": "2025-07-24T13:02:06.424426",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 7,
-            "timestamp": "2025-07-24T13:02:11.214838",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 8,
-            "timestamp": "2025-07-24T13:02:12.332742",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 9,
-            "timestamp": "2025-07-24T13:02:13.537720",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 1,
-            "timestamp": "2025-07-24T13:18:29.528285",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 2,
-            "timestamp": "2025-07-24T13:18:30.323060",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 3,
-            "timestamp": "2025-07-24T13:18:30.879037",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 4,
-            "timestamp": "2025-07-24T13:18:31.573121",
-            "image_filename": "0031_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 5,
-            "timestamp": "2025-07-24T13:18:32.274277",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 6,
-            "timestamp": "2025-07-24T13:18:32.671479",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 7,
-            "timestamp": "2025-07-24T13:18:33.007367",
-            "image_filename": "0800_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 8,
-            "timestamp": "2025-07-24T13:18:33.775043",
-            "image_filename": "0079_OD.png",
-            "ai_classification": "PDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
-        },
-        {
-            "assessment_number": 9,
-            "timestamp": "2025-07-24T13:18:34.388261",
-            "image_filename": "0551_OD.png",
-            "ai_classification": "NPDR",
-            "responses": {
-                "prediction_correct": "Yes",
-                "confidence": "1",
-                "features_highlighted": "1",
-                "localization_correct": "1",
-                "explanation_like": "1",
-                "trust_increased": "1",
-                "time_saving": "1"
-            }
+            },
+            "chat_history": []
         }
     ]
 }

@@ -54,10 +54,19 @@ def save_assessment_to_json(assessment_data):
     return filepath
 
 def prepare_assessment_data():
+    submission_time = datetime.now()
+    time_spent = (
+        (submission_time - st.session_state.case_start_time).total_seconds()
+        if st.session_state.case_start_time
+        else None
+    )
     return {
         "assessment_number": st.session_state.assessments_count + 1,
-        "timestamp": datetime.now().isoformat(),
+        "timestamp": submission_time.isoformat(),
         "image_filename": os.path.basename(st.session_state.current_image_path),
         "ai_classification": st.session_state.current_label,
-        "responses": st.session_state.responses
+        "explanation_type": st.session_state.current_explanation_type,
+        "time_spent_seconds": time_spent,
+        "responses": st.session_state.responses,
+        "chat_history": st.session_state.chat_history,
     }

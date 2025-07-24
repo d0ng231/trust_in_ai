@@ -1,0 +1,204 @@
+{
+    "user_info": {
+        "name": "David",
+        "specialty": "Medical Student",
+        "years_experience": "1-5 years",
+        "octa_experience": "Basic",
+        "ai_familiarity": "Very familiar",
+        "institution": "MSK",
+        "registration_timestamp": "2025-07-24T14:09:36.367723"
+    },
+    "session_started": "2025-07-24T14:09:43.655213",
+    "last_updated": "2025-07-24T14:10:40.458482",
+    "total_assessments": 9,
+    "assessments": [
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T14:09:43.654394",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 7.201559,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "3",
+                "localization_correct": "5",
+                "explanation_like": "5",
+                "trust_increased": "5",
+                "time_saving": "5"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This OCTA DCP image suggests PDR (Proliferative Diabetic Retinopathy) due to neovascularization primarily located at the 10\u201311 o\u2019clock and 2\u20133 o\u2019clock positions along the FAZ. The irregular, excessive vessel growth extending into the FAZ from the left-temporal and right-nasal regions indicates pathological angiogenesis. Additionally, significant capillary dropout is evident at the 6\u20137 o\u2019clock and 9 o\u2019clock positions, suggesting severe ischemia contributing to disease progression.",
+                    "timestamp": "14:09"
+                },
+                {
+                    "role": "user",
+                    "content": "What signs of diabetic retinopathy do you see?",
+                    "timestamp": "14:09"
+                }
+            ]
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T14:09:48.620013",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 4.962083,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "4",
+                "localization_correct": "3",
+                "explanation_like": "3",
+                "trust_increased": "3",
+                "time_saving": "2"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This OCTA DCP image suggests PDR, with neovascularization prominently seen at the 11\u201312 o\u2019clock and 1\u20132 o\u2019clock positions along the FAZ, where abnormal vessel proliferation extends into the avascular zone. Significant capillary dropout is evident at the 6\u20137 o\u2019clock and 9 o\u2019clock positions, where vascular density is notably reduced.",
+                    "timestamp": "14:09"
+                }
+            ]
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T14:09:53.968343",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 5.323525,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "2",
+                "features_highlighted": "3",
+                "localization_correct": "4",
+                "explanation_like": "1",
+                "trust_increased": "2",
+                "time_saving": "2"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This image suggests NPDR rather than PDR because it lacks neovascularization, as there are no abnormal vessels extending into the FAZ or forming new networks beyond normal capillary structures. Instead, it shows significant capillary dropout around the FAZ, particularly at the 10\u201311 o\u2019clock and 3\u20134 o\u2019clock positions, which is characteristic of NPDR but not exclusive to PDR. The presence of dilated and tortuous capillaries without proliferative growth further supports the diagnosis of NPDR rather than PDR.",
+                    "timestamp": "14:09"
+                }
+            ]
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T14:10:02.450723",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 8.458871,
+            "responses": {
+                "prediction_correct": "No",
+                "confidence": "3",
+                "features_highlighted": "3",
+                "localization_correct": "3",
+                "explanation_like": "3",
+                "trust_increased": "3",
+                "time_saving": "3",
+                "correct_label": "Healthy"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T14:10:09.181870",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 6.727068,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "5",
+                "features_highlighted": "5",
+                "localization_correct": "2",
+                "explanation_like": "3",
+                "trust_increased": "3",
+                "time_saving": "4"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T14:10:16.049053",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 6.863075,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "2",
+                "features_highlighted": "3",
+                "localization_correct": "4",
+                "explanation_like": "1",
+                "trust_increased": "4",
+                "time_saving": "5"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 7,
+            "timestamp": "2025-07-24T14:10:25.941352",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 9.887683,
+            "responses": {
+                "prediction_correct": "No",
+                "confidence": "3",
+                "features_highlighted": "3",
+                "localization_correct": "5",
+                "explanation_like": "5",
+                "trust_increased": "3",
+                "time_saving": "2",
+                "correct_label": "Healthy"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 8,
+            "timestamp": "2025-07-24T14:10:34.258492",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 8.301096,
+            "responses": {
+                "prediction_correct": "No",
+                "confidence": "3",
+                "features_highlighted": "4",
+                "localization_correct": "4",
+                "explanation_like": "2",
+                "trust_increased": "2",
+                "time_saving": "4",
+                "correct_label": "Healthy"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 9,
+            "timestamp": "2025-07-24T14:10:40.457313",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 6.193624,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "3",
+                "features_highlighted": "4",
+                "localization_correct": "4",
+                "explanation_like": "3",
+                "trust_increased": "2",
+                "time_saving": "3"
+            },
+            "chat_history": []
+        }
+    ]
+}

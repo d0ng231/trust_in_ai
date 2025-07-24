@@ -4,10 +4,11 @@ import torch
 OCTA_DIR = "/midtier/paetzollab/scratch/chl4044/streamlit_ui_trust_in_ai/OCTA_500_bnry"
 OUTPUT_DIR = "/midtier/paetzollab/scratch/chl4044/streamlit_ui_trust_in_ai/results"
 ENTRIES_FILE = "metadata.json"
-GENERATE_LIVE_EXPLANATION = False  
+GENERATE_LIVE_EXPLANATION = False
+EVALUATION_MODE = False
 SYSTEM_PROMPT_TEMPLATE = (
     "You are an ophthalmology AI assistant. "
-    "The OCT‑A image has been classified as **{classification}**. "
+    "The OCTA image has been classified as **{classification}**. "
     "Stick to that classification and focus on specific regions of the image "
     "that support it."
 )

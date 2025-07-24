@@ -1,0 +1,216 @@
+{
+    "user_info": {
+        "name": "Tina",
+        "specialty": "General Practice",
+        "years_experience": "1-5 years",
+        "octa_experience": "Intermediate",
+        "ai_familiarity": "Somewhat familiar",
+        "institution": "WCM",
+        "registration_timestamp": "2025-07-24T14:14:50.151185"
+    },
+    "session_started": "2025-07-24T14:15:08.541379",
+    "last_updated": "2025-07-24T14:16:34.475312",
+    "total_assessments": 9,
+    "assessments": [
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T14:15:08.540575",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 18.293383,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "2",
+                "features_highlighted": "3",
+                "localization_correct": "2",
+                "explanation_like": "2",
+                "trust_increased": "4",
+                "time_saving": "2"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This OCTA DCP image suggests PDR (Proliferative Diabetic Retinopathy) due to neovascularization primarily located at the 10\u201311 o\u2019clock and 2\u20133 o\u2019clock positions along the FAZ. The irregular, excessive vessel growth extending into the FAZ from the left-temporal and right-nasal regions indicates pathological angiogenesis. Additionally, significant capillary dropout is evident at the 6\u20137 o\u2019clock and 9 o\u2019clock positions, suggesting severe ischemia contributing to disease progression.",
+                    "timestamp": "14:14"
+                }
+            ]
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T14:15:22.689164",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 14.144262,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "2",
+                "features_highlighted": "4",
+                "localization_correct": "2",
+                "explanation_like": "2",
+                "trust_increased": "4",
+                "time_saving": "2"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This OCTA DCP image suggests PDR, with neovascularization prominently seen at the 11\u201312 o\u2019clock and 1\u20132 o\u2019clock positions along the FAZ, where abnormal vessel proliferation extends into the avascular zone. Significant capillary dropout is evident at the 6\u20137 o\u2019clock and 9 o\u2019clock positions, where vascular density is notably reduced.",
+                    "timestamp": "14:15"
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the vessel patterns in this image.",
+                    "timestamp": "14:15"
+                }
+            ]
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T14:15:36.746769",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "explanation_type": "text",
+            "time_spent_seconds": 14.052896,
+            "responses": {
+                "prediction_correct": "No",
+                "confidence": "2",
+                "features_highlighted": "2",
+                "localization_correct": "4",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "5",
+                "correct_label": "Healthy"
+            },
+            "chat_history": [
+                {
+                    "role": "ai",
+                    "content": "This image suggests NPDR rather than PDR because it lacks neovascularization, as there are no abnormal vessels extending into the FAZ or forming new networks beyond normal capillary structures. Instead, it shows significant capillary dropout around the FAZ, particularly at the 10\u201311 o\u2019clock and 3\u20134 o\u2019clock positions, which is characteristic of NPDR but not exclusive to PDR. The presence of dilated and tortuous capillaries without proliferative growth further supports the diagnosis of NPDR rather than PDR.",
+                    "timestamp": "14:15"
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the vessel patterns in this image.",
+                    "timestamp": "14:15"
+                },
+                {
+                    "role": "ai",
+                    "content": "This image shows a healthy foveal avascular zone (FAZ) with a smooth, regular contour and a dense, uniform capillary network around it. The parafoveal capillaries are evenly distributed without focal areas of non-perfusion or dropout. There are no microaneurysms or abnormal vessel tufts, and the overall vascular architecture is intact and continuous, consistent with a normal retina.",
+                    "timestamp": "14:15"
+                }
+            ]
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T14:15:49.110337",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 12.357589,
+            "responses": {
+                "prediction_correct": "No",
+                "confidence": "4",
+                "features_highlighted": null,
+                "localization_correct": "2",
+                "explanation_like": "2",
+                "trust_increased": "1",
+                "time_saving": "4",
+                "correct_label": "NPDR"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T14:16:00.034684",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 10.918931,
+            "responses": {
+                "prediction_correct": "No",
+                "confidence": "2",
+                "features_highlighted": "5",
+                "localization_correct": null,
+                "explanation_like": "2",
+                "trust_increased": "3",
+                "time_saving": "2",
+                "correct_label": "Healthy"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T14:16:10.358801",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "explanation_type": "graph",
+            "time_spent_seconds": 10.318413,
+            "responses": {
+                "prediction_correct": "No",
+                "confidence": "2",
+                "features_highlighted": "2",
+                "localization_correct": null,
+                "explanation_like": "4",
+                "trust_increased": "2",
+                "time_saving": null,
+                "correct_label": "Healthy"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 7,
+            "timestamp": "2025-07-24T14:16:17.645758",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 7.279222,
+            "responses": {
+                "prediction_correct": "No",
+                "confidence": "3",
+                "features_highlighted": null,
+                "localization_correct": "2",
+                "explanation_like": "3",
+                "trust_increased": "3",
+                "time_saving": "2",
+                "correct_label": "NPDR"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 8,
+            "timestamp": "2025-07-24T14:16:27.002167",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 9.332389,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "2",
+                "features_highlighted": "3",
+                "localization_correct": "3",
+                "explanation_like": "3",
+                "trust_increased": "3",
+                "time_saving": "3"
+            },
+            "chat_history": []
+        },
+        {
+            "assessment_number": 9,
+            "timestamp": "2025-07-24T14:16:34.474134",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "explanation_type": "gradcam",
+            "time_spent_seconds": 7.466266,
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "2",
+                "features_highlighted": "3",
+                "localization_correct": "4",
+                "explanation_like": "3",
+                "trust_increased": "2",
+                "time_saving": "2"
+            },
+            "chat_history": []
+        }
+    ]
+}
