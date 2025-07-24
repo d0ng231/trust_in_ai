@@ -1,14 +1,11 @@
 import streamlit as st
 from datetime import datetime
 from config import SPECIALTIES, EXPERIENCE_LEVELS, OCTA_EXPERIENCE, AI_FAMILIARITY, LABELS
-import textwrap
 import io
 import base64
 
 def render_pre_questionnaire():
-    welcome_message = textwrap.dedent("""
-        Welcome and thank you for participating in this study. Please answer each question as accurately as you can. Your responses will be processed anonymously and reported only in aggregate. The whole process should take approximately 30 minutes to complete. If you need to pause, you may return and continue later.
-    """)
+    welcome_message = """Welcome and thank you for participating in this study. Please answer each question as accurately as you can. Your responses will be processed anonymously and reported only in aggregate. The whole process should take approximately 30 minutes to complete. If you need to pause, you may return and continue later."""
 
     st.markdown(
         f'<div class="welcome-container">{welcome_message}</div>',
