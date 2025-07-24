@@ -13,7 +13,12 @@ def load_octa_entry():
     if not st.session_state.entries:
         st.error(f"No entries in {ENTRIES_FILE}")
         return None, None, None, None, None, None
-    entry = st.session_state.entries[st.session_state.entry_index % len(st.session_state.entries)]
+    
+    # Check if the index is out of bounds
+    if st.session_state.entry_index >= len(st.session_state.entries):
+        return None, None, None, None, None, None 
+
+    entry = st.session_state.entries[st.session_state.entry_index]
     st.session_state.entry_index += 1
     
     image_path = entry['image_id']

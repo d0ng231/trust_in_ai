@@ -35,6 +35,8 @@ def initialize_session_state():
         st.session_state.generated_explanation = None
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
+    if "all_cases_completed" not in st.session_state:
+        st.session_state.all_cases_completed = False
 
 
 def update_current_image(

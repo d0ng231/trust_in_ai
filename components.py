@@ -1,42 +1,45 @@
 import streamlit as st
 from datetime import datetime
 from config import SPECIALTIES, EXPERIENCE_LEVELS, OCTA_EXPERIENCE, AI_FAMILIARITY, LABELS
-import pandas as pd
+import textwrap
 import io
 import base64
 
 def render_pre_questionnaire():
-    with st.container():
-        st.markdown("""
-        **Welcome!**
+    welcome_message = textwrap.dedent("""
+        Welcome and thank you for participating in this study. Please answer each question as accurately as you can. Your responses will be processed anonymously and reported only in aggregate. The whole process should take approximately 30 minutes to complete. If you need to pause, you may return and continue later.
+    """)
 
-        This short questionnaire collects your clinical background before guiding you through evaluating AI-generated classifications of OCTA scans.  
-        Please provide your information below to begin.
-        """)
-        user_name = st.text_input("Full Name")
-        col1, col2 = st.columns(2)
-        with col1:
-            specialty = st.selectbox("Medical Specialty", SPECIALTIES)
-            years_experience = st.selectbox("Years of Clinical Experience", EXPERIENCE_LEVELS)
-        with col2:
-            octa_experience = st.selectbox("Experience with OCTA Imaging", OCTA_EXPERIENCE)
-            ai_familiarity = st.selectbox("Familiarity with AI in Medical Imaging", AI_FAMILIARITY)
-        institution = st.text_input("Institution/Hospital", placeholder="Optional")
-        if st.button("Start Assessment", type="primary", use_container_width=True):
-            if user_name:
-                st.session_state.user_info = {
-                    "name": user_name,
-                    "specialty": specialty,
-                    "years_experience": years_experience,
-                    "octa_experience": octa_experience,
-                    "ai_familiarity": ai_familiarity,
-                    "institution": institution,
-                    "registration_timestamp": datetime.now().isoformat()
-                }
-                st.session_state.user_registered = True
-                st.rerun()
-            else:
-                st.error("Please enter your name to continue.")
+    st.markdown(
+        f'<div class="welcome-container">{welcome_message}</div>',
+        unsafe_allow_html=True
+    )
+
+    user_name = st.text_input("Full Name")
+    col1, col2 = st.columns(2)
+    with col1:
+        specialty = st.selectbox("Medical Specialty", SPECIALTIES)
+        years_experience = st.selectbox("Years of Clinical Experience", EXPERIENCE_LEVELS)
+    with col2:
+        octa_experience = st.selectbox("Experience with OCTA Imaging", OCTA_EXPERIENCE)
+        ai_familiarity = st.selectbox("Familiarity with AI in Medical Imaging", AI_FAMILIARITY)
+    institution = st.text_input("Institution/Hospital")
+
+    if st.button("Start Assessment", type="primary", use_container_width=True):
+        if user_name:
+            st.session_state.user_info = {
+                "name": user_name,
+                "specialty": specialty,
+                "years_experience": years_experience,
+                "octa_experience": octa_experience,
+                "ai_familiarity": ai_familiarity,
+                "institution": institution,
+                "registration_timestamp": datetime.now().isoformat()
+            }
+            st.session_state.user_registered = True
+            st.rerun()
+        else:
+            st.error("Please enter your name to continue.")
 
 def render_ai_classification():
     if st.session_state.image_loaded and st.session_state.current_label:
@@ -45,9 +48,12 @@ def render_ai_classification():
             "NPDR": "Non-Proliferative Diabetic Retinopathy",
             "Healthy": "Healthy Retina"
         }[st.session_state.current_label]
+        
         st.markdown(f"""
         <div class="ai-classification-box">
-            AI Classification: <span style="color: #000000;">{st.session_state.current_label} — {full_name}</span>
+            <div class="classification-title">AI Classification</div>
+            <div class="classification-main">{st.session_state.current_label}</div>
+            <div class="classification-fullname">{full_name}</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -123,10 +129,18 @@ def render_explanation_column():
                                     "Importance": f"{float(importance):.3f}",
                                 }
                             )
-                if feats:
-                    df = pd.DataFrame(feats[:3])
-                    st.write("Top 3 Important Graph Features")
-                    st.table(df)
+                    if feats:
+                        top_names = [f["Feature"] for f in feats[:3]]
+                        if len(top_names) == 1:
+                            sentence = f"The key feature leading to this prediction is {top_names[0]}."
+                        elif len(top_names) == 2:
+                            sentence = f"The two features that most influenced this prediction are {top_names[0]} and {top_names[1]}."
+                        else:
+                            sentence = (
+                                f"The top three features contributing to this prediction are "
+                                    f"{top_names[0]}, {top_names[1]}, and {top_names[2]}."
+                                )
+                            st.markdown(sentence)
             except Exception as e:
                 st.warning(f"Could not load feature data: {e}")
     else:

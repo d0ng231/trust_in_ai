@@ -59,6 +59,35 @@ def ask_question(image: Image.Image, question: str, classification: str | None =
         )
         return resp.choices[0].message.content.strip()
 
+# New function for streaming responses
+def ask_question_stream(image: Image.Image, question: str, classification: str | None = None):
+    messages = []
+    if classification:
+        messages.append(
+            {
+                "role": "system",
+                "content": SYSTEM_PROMPT_TEMPLATE.format(classification=classification),
+            }
+        )
+    messages.append(
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "image_url",
+                    "image_url": {"url": f"data:image/png;base64,{_img_to_b64(image)}"},
+                },
+                {"type": "text", "text": question},
+            ],
+        }
+    )
+    stream = client.chat.completions.create(
+        model=MODEL_ID, messages=messages, temperature=0.2, stream=True
+    )
+    for chunk in stream:
+        if chunk.choices[0].delta.content is not None:
+            yield chunk.choices[0].delta.content
+
 
 def generate_explanation(image: Image.Image, classification: str) -> str:
     prompt = (

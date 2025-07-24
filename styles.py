@@ -3,184 +3,119 @@ CUSTOM_CSS = """
     .main {
         background-color: #f8f9fa;
     }
+
     .stApp {
         max-width: 1400px;
         margin: 0 auto;
     }
-    .upload-box {
-        border: 2px dashed #cccccc;
-        border-radius: 10px;
-        padding: 10px;
-        text-align: center;
-        background-color: #fafafa;
+
+    .block-container {
+        padding: 2rem 1rem 2rem 1rem;
     }
-    .explanation-box {
-        background-color: white;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        min-height: 150px;
-    }
-    .questions-box {
-        background-color: #f8f9fa;
-        padding: 8px;
-        border-radius: 5px;
-        border: none;
-        box-shadow: none;
-    }
-    .ai-classification-box {
-        background-color: #fff3e0;
-        padding: 8px;
-        border-radius: 10px;
-        text-align: center;
-        font-weight: bold;
-        margin: 3px 0;
-    }
+
     h1 {
         color: #1976d2;
         text-align: center;
         padding-bottom: 5px;
         margin-bottom: 5px;
     }
+
     h3 {
         color: #2e7d32;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        border-bottom: none !important;
     }
-    h4 {
-        margin-top: 5px;
-        margin-bottom: 5px;
+
+    h1, h2, h3, h4, h5, h6 {
         border-bottom: none !important;
+        padding-bottom: 0 !important;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .stMarkdown {
+        margin-bottom: 0.25rem;
+    }
+
+    .stRadio {
+        margin-bottom: 0.1rem;
     }
     .stRadio > label {
         font-weight: bold;
         color: #1976d2;
-    }
-    .confidence-label {
-        font-size: 16px;
-        font-weight: bold;
-        color: #1976d2;
-    }
-    .block-container {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    .stMarkdown {
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.25rem !important;
     }
     .stRadio > div {
         gap: 0.3rem;
     }
-    .stRadio {
-        margin-bottom: 0.1rem;
-    }
-    .stTextArea > div > div > textarea {
-        margin-bottom: 0.25rem;
-        color: black !important;
-    }
-    .stTextArea textarea[disabled] {
-        color: black !important;
-        -webkit-text-fill-color: black !important;
-        opacity: 1 !important;
-    }
-    .stSlider > div > div > div {
-        margin-bottom: 0.25rem;
-    }
-    hr {
-        display: none !important;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
-    }
-    .stMarkdown > div > h3:after {
-        display: none !important;
-    }
-    .main .block-container h3 {
-        border-bottom: none !important;
-    }
-    div[data-testid="stMarkdownContainer"] hr {
-        display: none !important;
-    }
-    .stRadio > label {
-        margin-bottom: 0.25rem !important;
-    }
-    .element-container .stRadio {
-        margin-top: 0.15rem;
-        margin-bottom: 0.15rem;
-    }
+
     .element-container {
         margin-bottom: 0.5rem;
     }
-    .main-header {
-        margin-bottom: 0.5rem;
-    }
-    .load-button {
-        background-color: #1976d2;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
+
+    .welcome-container {
+        background-color: transparent;
+        box-shadow: none;
         border: none;
-        cursor: pointer;
-        width: 100%;
+        margin: 0 0 2rem 0;
+        text-align: left;
     }
-    .pre-questionnaire-box {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .submit-button-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .chat-message {
-        margin-bottom: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        position: relative;
-    }
-    .user-message {
-        background-color: #e3f2fd;
-        margin-left: 20%;
-    }
-    .ai-message {
-        background-color: #f5f5f5;
-        margin-right: 20%;
-    }
-    .message-content {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-    .message-time {
-        font-size: 11px;
-        color: #666;
-        position: absolute;
-        bottom: 2px;
-        right: 10px;
-    }
-    .chat-placeholder {
-        padding: 20px;
-        background-color: #f9f9f9;
+
+    .ai-classification-box {
+        background-color: #cfe2f3;
+        padding: 16px;
         border-radius: 10px;
         text-align: center;
-        color: #666;
+        margin-top: 15px;
+        line-height: 1.4;
     }
-    .chat-placeholder ul {
-        text-align: left;
-        display: inline-block;
-        margin-top: 10px;
+
+    .classification-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: #616161;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
-    .chat-placeholder li {
-        margin-bottom: 5px;
-        font-size: 13px;
+
+    .classification-main {
+        font-size: 22px;
+        font-weight: bold;
+        color: #000000;
     }
+
+    .classification-fullname {
+        font-size: 16px;
+        font-weight: 500;
+        color: #424242;
+    }
+
+    .suggestion-container {
+        padding: 0.5rem 0.1rem;
+    }
+
+    .suggestion-container .stButton > button {
+        background-color: #f0f2f6;
+        color: #333;
+        border: 1px solid #dcdcdc !important;
+        border-radius: 12px !important;
+        font-size: 10px;
+        font-weight: 500;
+        text-align: left !important;
+        padding: 0.5rem 1rem !important;
+        margin-bottom: 3px !important;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .suggestion-container .stButton > button:hover {
+        background-color: #e6e8eb !important;
+        border-color: #b0b0b0 !important;
+        color: #000;
+    }
+
+    .suggestion-container .stButton > button:focus {
+        box-shadow: none !important;
+    }
+
+    
 </style>
 """

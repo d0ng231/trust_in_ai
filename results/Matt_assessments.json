@@ -1,0 +1,1021 @@
+{
+    "user_info": {
+        "name": "Matt",
+        "specialty": "Ophthalmology",
+        "years_experience": "< 1 year",
+        "octa_experience": "None",
+        "ai_familiarity": "Not familiar",
+        "institution": "",
+        "registration_timestamp": "2025-07-24T10:49:56.626014"
+    },
+    "session_started": "2025-07-24T10:52:07.401308",
+    "last_updated": "2025-07-24T13:18:34.403350",
+    "total_assessments": 67,
+    "assessments": [
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T10:52:07.400592",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T10:52:09.791912",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T10:52:10.865295",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T10:52:20.558840",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T10:52:22.170924",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T10:52:23.749340",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 7,
+            "timestamp": "2025-07-24T10:52:27.251122",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 8,
+            "timestamp": "2025-07-24T10:52:28.186283",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 9,
+            "timestamp": "2025-07-24T10:52:28.864151",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T11:42:33.833271",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T11:42:34.981482",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T11:42:35.934847",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T11:44:57.697061",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T11:44:58.654367",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T11:44:59.345936",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T11:45:00.276380",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T11:45:12.362936",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T11:45:14.154544",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T12:04:18.046617",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T12:04:18.671691",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T12:04:19.252640",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T12:04:20.203392",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T12:04:21.243522",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T12:04:21.972871",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T12:53:10.841605",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T12:53:11.873824",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T12:53:20.447529",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T12:53:28.559672",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T12:53:29.131097",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T12:53:47.508438",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 7,
+            "timestamp": "2025-07-24T12:53:48.164679",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 8,
+            "timestamp": "2025-07-24T12:53:49.028894",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 9,
+            "timestamp": "2025-07-24T12:53:49.980250",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 10,
+            "timestamp": "2025-07-24T12:53:57.412738",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 11,
+            "timestamp": "2025-07-24T12:53:58.026968",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 12,
+            "timestamp": "2025-07-24T12:53:58.550526",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 13,
+            "timestamp": "2025-07-24T12:54:00.246043",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 14,
+            "timestamp": "2025-07-24T12:54:01.149527",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 15,
+            "timestamp": "2025-07-24T12:54:01.692490",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 16,
+            "timestamp": "2025-07-24T12:54:02.740770",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T12:58:40.028226",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T12:58:41.867725",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T12:58:42.983892",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T12:58:44.484763",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T12:58:46.254113",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T12:58:47.109387",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 7,
+            "timestamp": "2025-07-24T12:58:48.045907",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 8,
+            "timestamp": "2025-07-24T12:58:48.746507",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 9,
+            "timestamp": "2025-07-24T12:58:49.618216",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T13:02:00.086095",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T13:02:01.342006",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T13:02:02.231089",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T13:02:03.836530",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T13:02:05.170431",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T13:02:06.424426",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 7,
+            "timestamp": "2025-07-24T13:02:11.214838",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 8,
+            "timestamp": "2025-07-24T13:02:12.332742",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 9,
+            "timestamp": "2025-07-24T13:02:13.537720",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 1,
+            "timestamp": "2025-07-24T13:18:29.528285",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 2,
+            "timestamp": "2025-07-24T13:18:30.323060",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 3,
+            "timestamp": "2025-07-24T13:18:30.879037",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 4,
+            "timestamp": "2025-07-24T13:18:31.573121",
+            "image_filename": "0031_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 5,
+            "timestamp": "2025-07-24T13:18:32.274277",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 6,
+            "timestamp": "2025-07-24T13:18:32.671479",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 7,
+            "timestamp": "2025-07-24T13:18:33.007367",
+            "image_filename": "0800_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 8,
+            "timestamp": "2025-07-24T13:18:33.775043",
+            "image_filename": "0079_OD.png",
+            "ai_classification": "PDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        },
+        {
+            "assessment_number": 9,
+            "timestamp": "2025-07-24T13:18:34.388261",
+            "image_filename": "0551_OD.png",
+            "ai_classification": "NPDR",
+            "responses": {
+                "prediction_correct": "Yes",
+                "confidence": "1",
+                "features_highlighted": "1",
+                "localization_correct": "1",
+                "explanation_like": "1",
+                "trust_increased": "1",
+                "time_saving": "1"
+            }
+        }
+    ]
+}
