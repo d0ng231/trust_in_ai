@@ -1,0 +1,51 @@
+predicted_label_name,Healthy_prob,NPDR_prob,PDR_prob
+NPDR,0.28034666180610657,0.5202001929283142,0.199453204870224
+
+Top k Nodes:
+node_id,importance,x_pos_percentage,y_pos_percentage,position_description,feature_explanations
+2727,0.0015364481811815445,0.9353377,0.5487855,Middle-Right,curveness: 0.00129; volume: 0.00010; length: 0.00007; node2_degree: 0.00003; avgCrossSection: 0.00003
+2913,-0.0014145402408814948,0.40753707,0.59057224,Middle-Center,node2_degree: -0.00035; roundnessAvg: -0.00026; minRadiusAvg: -0.00024; avgCrossSection: -0.00018; avgRadiusAvg: -0.00012
+676,-0.0013711840227445182,0.576881,0.11582256,Top-Center,node2_degree: -0.00049; avgCrossSection: -0.00018; volume: -0.00014; avgRadiusAvg: -0.00014; roundnessAvg: -0.00010
+352,-0.0013682109399913306,0.7572076,0.061959654,Top-Right,node2_degree: -0.00038; avgCrossSection: -0.00021; avgRadiusAvg: -0.00019; roundnessAvg: -0.00017; volume: -0.00012
+4140,0.001363987145801641,0.15362439,0.8493207,Bottom-Left,curveness: 0.00094; volume: 0.00015; length: 0.00009; avgRadiusStd: 0.00004; avgCrossSection: 0.00004
+2709,-0.0013549393343877992,0.12877554,0.5428847,Middle-Left,roundnessAvg: -0.00050; avgCrossSection: -0.00026; avgRadiusAvg: -0.00023; minRadiusAvg: -0.00013; volume: -0.00013
+1547,-0.0013516347264389342,0.89929986,0.26801154,Top-Right,node2_degree: -0.00047; avgCrossSection: -0.00019; avgRadiusAvg: -0.00017; roundnessAvg: -0.00015; volume: -0.00013
+2958,0.0013502735593295878,0.6721582,0.55701935,Middle-Right,volume: 0.00057; length: 0.00041; curveness: 0.00015; distance: 0.00014; node2_degree: 0.00003
+763,0.0013431149978770421,0.82310545,0.12529148,Top-Right,curveness: 0.00061; volume: 0.00027; node2_degree: -0.00024; avgCrossSection: 0.00022; avgRadiusStd: 0.00020
+4601,-0.001342753937142819,0.9779654,0.927748,Bottom-Right,node2_degree: -0.00036; avgCrossSection: -0.00026; avgRadiusAvg: -0.00017; roundnessAvg: -0.00016; volume: -0.00012
+3879,-0.0013213720720092474,0.3050523,0.7948403,Bottom-Left,roundnessAvg: -0.00048; avgCrossSection: -0.00025; avgRadiusAvg: -0.00023; minRadiusAvg: -0.00013; volume: -0.00012
+1223,-0.0013190031896058475,0.68018943,0.21799095,Top-Right,node2_degree: -0.00043; roundnessAvg: -0.00024; avgRadiusAvg: -0.00019; avgCrossSection: -0.00017; volume: -0.00011
+
+Top k Edges:
+edge_index,source_node,target_node,importance,x_pos_percentage,y_pos_percentage,position_description
+19321,4930,5042,0.000665402992172871,0.9715816,0.9837382,Bottom-Right
+17644,4510,4436,0.0006627843095956701,0.012149918,0.90983945,Bottom-Left
+5524,1426,1311,0.0006605611282485059,0.99176276,0.23857555,Top-Right
+10627,2727,2731,0.0006350290987413189,0.9353377,0.5487855,Middle-Right
+7598,1950,1932,0.0006097292157931175,0.7583744,0.3469193,Middle-Right
+3748,980,959,0.0006066937857216102,0.8309308,0.16550021,Top-Right
+5077,1311,1426,0.0005973219345126813,0.99176276,0.23857555,Top-Right
+9594,2462,2482,0.0005926444876166416,0.29667753,0.45416507,Middle-Left
+10628,2727,2756,0.0005892781201668494,0.9378089,0.55166733,Middle-Right
+13380,3426,3258,0.0005877177634035127,0.6000826,0.6681764,Bottom-Center
+19687,5042,4930,0.0005872234180342219,0.9715816,0.9837382,Bottom-Right
+13617,3487,3503,0.0005868482659872844,0.22137561,0.7157266,Bottom-Left
+
+Important Features for the Entire Graph:
+feature,importance,reason
+node2_degree,0.06621592467916264,Degree of connectedness of node2
+roundnessAvg,0.029581730278621692,Changes in vessel roundness can be associated with pathology
+curveness,-0.027178004164744904,Increased vessel curvature can be a sign of disease progression
+avgRadiusStd,-0.022477057069214226,Variability in average radius can reflect structural anomalies
+avgRadiusAvg,-0.017427688150990554,Average radius changes may be indicative of vessel dilation
+minRadiusStd,0.013009607212991946,Variability in minimum radius can suggest irregularities
+length,0.011112526685041604,Long vessels may indicate abnormal blood flow
+avgCrossSection,0.007126821249424242,Altered cross-sectional area may reflect vessel damage
+distance,0.006774083013079463,Long distance between nodes can suggest structural changes
+minRadiusAvg,-0.005791037558116632,Reduced minimum radius may indicate vessel narrowing
+roundnessStd,-0.002858727573065013,Variability in roundness may indicate irregular vessel shape
+volume,0.0026256294016420868,Changes in vessel volume can be associated with disease
+hetero_degree,0.001115570333186312,Connections to different node types
+degree,0.0009891359053896451,Node degree reflects connectivity
+node1_degree,0.0005813553903704887,Degree of connectedness of node1
+

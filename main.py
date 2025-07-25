@@ -21,8 +21,6 @@ from components import (
 from inference import generate_explanation, ask_question_stream
 from config import GENERATE_LIVE_EXPLANATION, EVALUATION_MODE
 from evaluation import render_evaluation_page
-import textwrap
-
 
 def render_finish_page():
     st.balloons()

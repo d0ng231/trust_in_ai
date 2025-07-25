@@ -21,39 +21,39 @@
     "image_id": "data/DCP_images/0031_OD.png",
     "label": "PDR",
     "explanation_type": "graph",
-    "explanation": "/data/DCP_overlay_cropped/0031_OD.png",
-    "csv_path": "/data/CSVs/0031_OD.csv"
+    "explanation": "data/DCP_overlay_cropped/0031_OD.png",
+    "csv_path": "data/CSVs/0031_OD.csv"
   },
   {
     "image_id": "data/DCP_images/0079_OD.png",
     "label": "PDR",
     "explanation_type": "graph",
-    "explanation": "/data/DCP_overlay_cropped/0079_OD.png",
-    "csv_path": "/data/CSVs/0079_OD.csv"
+    "explanation": "data/DCP_overlay_cropped/0079_OD.png",
+    "csv_path": "data/CSVs/0079_OD.csv"
   },
   {
     "image_id": "data/DCP_images/0551_OD.png",
     "label": "NPDR",
     "explanation_type": "graph",
-    "explanation": "/data/DCP_overlay_cropped/0551_OD.png",
-    "csv_path": "/data/CSVs/0551_OD.csv"
+    "explanation": "data/DCP_overlay_cropped/0551_OD.png",
+    "csv_path": "data/CSVs/0551_OD.csv"
   },
   {
     "image_id": "data/DCP_images/0800_OD.png",
     "label": "PDR",
     "explanation_type": "gradcam",
-    "explanation": "/data/CNN_gradcam/0800_OD.png"
+    "explanation": "data/CNN_gradcam/0800_OD.png"
   },
   {
     "image_id": "data/DCP_images/0079_OD.png",
     "label": "PDR",
     "explanation_type": "gradcam",
-    "explanation": "/data/CNN_gradcam/0079_OD.png"
+    "explanation": "data/CNN_gradcam/0079_OD.png"
   },
   {
     "image_id": "data/DCP_images/0551_OD.png",
     "label": "NPDR",
     "explanation_type": "gradcam",
-    "explanation": "/data/CNN_gradcam/0551_OD.png"
+    "explanation": "data/CNN_gradcam/0551_OD.png"
   }
 ]
