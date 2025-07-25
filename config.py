@@ -5,7 +5,7 @@ OCTA_DIR = "data/DCP_images"
 OUTPUT_DIR = "results"
 ENTRIES_FILE = "metadata.json"
 GENERATE_LIVE_EXPLANATION = False
-EVALUATION_MODE = True
+EVALUATION_MODE = False
 SYSTEM_PROMPT_TEMPLATE = (
     "You are an ophthalmology AI assistant. "
     "The OCTA image has been classified as **{classification}**. "
