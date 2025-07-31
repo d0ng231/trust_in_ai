@@ -11,8 +11,8 @@
 
 
 ```bash
-git clone <your-repository-url>
-cd <your-repository-directory>
+git clone https://github.com/d0ng231/trust_in_ai.git
+cd trust_in_ai
 ```
 
 ### Step 2: Install Dependencies
