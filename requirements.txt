@@ -1,6 +1,9 @@
 Pillow
 huggingface_hub
 openai
-torch
+pandas
 plotly
 requests
+streamlit
+torch
+transformers

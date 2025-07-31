@@ -85,7 +85,7 @@ def render_explanation_column():
     et = st.session_state.current_explanation_type
     if et == "text":
         return
-    st.markdown("### AI Explanation")
+    st.markdown("### Explanation")
     if et == "graph":
         html = _image_to_html(st.session_state.current_explanation)
         st.markdown(html, unsafe_allow_html=True)
@@ -149,7 +149,7 @@ def render_questions_column():
             others = [l for l in LABELS if l != current]
             q1b = st.radio("**Please specify the correct label:**", others, key=f"correct_label_{st.session_state.assessments_count}", horizontal=True)
             st.session_state.responses['correct_label'] = q1b
-        q2 = st.radio("**2. Rate your confidence in this AI assessment.**", likert, key=f"q2_{st.session_state.assessments_count}", horizontal=True)
+        q2 = st.radio("**2. Rate your confidence in this prediction.**", likert, key=f"q2_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['confidence'] = q2
         q3 = st.radio("**3. Is the explanation highlighting important features?**", likert, key=f"q3_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['features_highlighted'] = q3
@@ -159,7 +159,7 @@ def render_questions_column():
         st.session_state.responses['explanation_like'] = q5
         q6 = st.radio("**6. Does the explanation increase your trust in the model's prediction?**", likert, key=f"q6_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['trust_increased'] = q6
-        q7 = st.radio("**7. Will this AI help you save time?**", likert, key=f"q7_{st.session_state.assessments_count}", horizontal=True)
+        q7 = st.radio("**7. Will this model help you save time?**", likert, key=f"q7_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['time_saving'] = q7
 
 def render_footer():
