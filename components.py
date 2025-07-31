@@ -7,10 +7,7 @@ import textwrap
 
 def render_welcome_page():
     welcome_message = textwrap.dedent("""
-        Welcome and thank you for participating in this study.
-                                      
-        You will be presented with a series of OCT-A scans. For each scan, we will provide a classification and an explanation. 
-        Your task is to assess the quality of the classification and explanation.
+        Welcome and thank you for participating in this study. You will be presented with a series of OCT-A scans. For each scan, we will provide a classification and an explanation. Your task is to assess the quality of the classification and explanation.
 
         The whole process should take approximately 30 minutes to complete.
     """)
