@@ -11,9 +11,7 @@ def load_all_assessment_data():
     if not local_files:
         st.info("No local assessment data found. Click 'Refresh Data from Server' to sync.")
         return pd.DataFrame()
-    
-    st.info(f"Processing {len(local_files)} local assessment files...")
-    
+
     for i, file_path in enumerate(local_files):
         try:
             data = json.loads(file_path.read_text(encoding='utf-8'))

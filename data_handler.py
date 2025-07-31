@@ -14,35 +14,52 @@ from config import (
 )
 
 def _make_post_request(payload):
-    r = requests.post(
-        APPSCRIPT_URL,
-        data=json.dumps(payload, ensure_ascii=False),
-        headers={"Content-Type": "application/json"},
-        timeout=120,
-    )
-    r.raise_for_status()
-    response_json = r.json()
-    if response_json.get("status") != "OK":
-        raise RuntimeError(f"Server Error: {response_json.get('message')}")
-    return response_json
+    try:
+        r = requests.post(
+            APPSCRIPT_URL,
+            data=json.dumps(payload, ensure_ascii=False),
+            headers={"Content-Type": "application/json"},
+            timeout=120,
+        )
+        r.raise_for_status()
+        response_json = r.json()
+        if response_json.get("status") != "OK":
+            raise RuntimeError(f"Server Error: {response_json.get('message')}")
+        return response_json
+    except requests.exceptions.RequestException as e:
+        st.error(f"A connection error occurred during upload: {e}")
+        raise e
+
 
 def _fetch_raw_content(params):
     try:
         r = requests.get(APPSCRIPT_URL, params=params, timeout=30)
         r.raise_for_status()
-        content = r.text
-        try:
-            json_content = json.loads(content)
-            if isinstance(json_content, dict) and json_content.get('status') != 'OK':
-                st.warning(f"Server Warning: {json_content.get('message', 'An unspecified error occurred.')}")
+        
+        content_type = r.headers.get('content-type', '')
+
+        # The server sends JSON only for status/error messages.
+        # A successful file download is sent as plain text.
+        if 'application/json' in content_type:
+            json_content = r.json()
+            if json_content.get('status') != 'OK':
+                st.warning(f"Server reported an issue: {json_content.get('message', 'Unspecified error.')}")
                 return None
-        except json.JSONDecodeError:
-            pass
-        return content
+            # If status is OK, it's likely from a 'list_files' call. Return the raw text for parsing.
+            return r.text
+        else:
+            # Assumed to be a successful file download (text/plain)
+            return r.text
+
     except requests.exceptions.HTTPError as e:
         if e.response.status_code == 404:
+            # This is a normal "not found" case, not an error.
             return None
-        raise e
+        st.error(f"A network error occurred: {e}")
+        return None
+    except requests.exceptions.RequestException as e:
+        st.error(f"A connection error occurred: {e}")
+        return None
 
 def get_drive_file_by_name(filename, folder_key):
     return _fetch_raw_content({"filename": filename, "folderKey": folder_key})
@@ -52,14 +69,16 @@ def get_drive_file_by_id(file_id):
 
 def list_drive_files(folder_key):
     params = {"action": "list_files", "folderKey": folder_key}
-    r = requests.get(APPSCRIPT_URL, params=params, timeout=30)
-    r.raise_for_status()
-    response_json = r.json()
-    if response_json.get("status") == "OK":
-        return response_json.get("files", [])
-    else:
-        st.error(f"Server Error while listing files: {response_json.get('message')}")
-        return []
+    content = _fetch_raw_content(params)
+    if content:
+        try:
+            response_json = json.loads(content)
+            if response_json.get("status") == "OK":
+                return response_json.get("files", [])
+        except json.JSONDecodeError:
+            st.error("Failed to parse file list from server.")
+            return []
+    return []
 
 def get_local_path(drive_path_str: str) -> Path | None:
     filename = os.path.basename(drive_path_str)
@@ -124,25 +143,43 @@ def synchronize_drive_results():
     results_folder_key = DRIVE_FOLDER_KEYS['results']
     file_list = list_drive_files(results_folder_key)
     if not file_list:
-        st.warning("No prior assessment files found.")
+        st.warning("No results files found on the server.")
         return
-    progress_bar = st.progress(0, text="Downloading results...")
-    for i, file_info in enumerate(file_list):
-        filename = file_info.get("name")
-        local_path = LOCAL_RESULTS_DIR / filename
-        local_path.parent.mkdir(parents=True, exist_ok=True)
-        content = get_drive_file_by_id(file_info.get("id"))
+    
+    success_count = 0
+    failure_count = 0
+    
+    for file_info in file_list:
+        filename = file_info.get("name", "Unknown file")
+        file_id = file_info.get("id")
+        if not file_id:
+            st.warning(f"Skipping a file entry with no ID: '{filename}'")
+            failure_count += 1
+            continue
+        
+        content = get_drive_file_by_id(file_id)
+        
         if content:
+            local_path = LOCAL_RESULTS_DIR / filename
+            local_path.parent.mkdir(parents=True, exist_ok=True)
             local_path.write_text(content, encoding='utf-8')
-        progress_bar.progress((i + 1) / len(file_list), text=f"Downloaded {filename}")
-    progress_bar.empty()
-    st.success("Results synchronized.")
+            success_count += 1
+        else:
+            st.warning(f"Failed to download content for: {filename}")
+            failure_count += 1
 
-def fetch_metadata():
-    return json.loads(LOCAL_METADATA_PATH.read_text(encoding='utf-8')) if LOCAL_METADATA_PATH.exists() else None
+    if failure_count == 0 and success_count > 0:
+        st.success(f"Successfully synchronized {success_count} result file(s).")
+    elif success_count > 0 and failure_count > 0:
+        st.error(f"Synchronization complete with errors. Downloaded {success_count} file(s), but failed on {failure_count} file(s).")
+    else:
+        st.error(f"Synchronization failed. Could not download any of the {len(file_list)} result file(s).")
 
 def fetch_password_on_demand():
     return get_drive_file_by_name(PASSWORD_FILE_NAME, DRIVE_FOLDER_KEYS["root_data"])
+
+def fetch_metadata():
+    return json.loads(LOCAL_METADATA_PATH.read_text(encoding='utf-8')) if LOCAL_METADATA_PATH.exists() else None
 
 def _get_current_local_assessment_path():
     LOCAL_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
