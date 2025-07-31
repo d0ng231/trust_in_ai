@@ -3,40 +3,55 @@ from datetime import datetime
 from config import SPECIALTIES, EXPERIENCE_LEVELS, OCTA_EXPERIENCE, AI_FAMILIARITY, LABELS
 import io
 import base64
+import textwrap
 
-def render_pre_questionnaire():
-    welcome_message = """Welcome and thank you for participating in this study. Please answer each question as accurately as you can. Your responses will be processed anonymously and reported only in aggregate. The whole process should take approximately 30 minutes to complete. If you need to pause, you may return and continue later."""
+def render_welcome_page():
+    welcome_message = textwrap.dedent("""
+        Welcome and thank you for participating in this study.
+                                      
+        You will be presented with a series of OCT-A scans. For each scan, we will provide a classification and an explanation. 
+        Your task is to assess the quality of the classification and explanation.
 
+        The whole process should take approximately 30 minutes to complete.
+    """)
     st.markdown(
-        f'<div class="welcome-container">{welcome_message}</div>',
+        f'<div class="welcome-container" style="font-size: 18px; margin: 2rem 0;">{welcome_message}</div>',
         unsafe_allow_html=True
     )
-
-    user_name = st.text_input("Full Name")
-    col1, col2 = st.columns(2)
-    with col1:
-        specialty = st.selectbox("Medical Specialty", SPECIALTIES)
-        years_experience = st.selectbox("Years of Clinical Experience", EXPERIENCE_LEVELS)
-    with col2:
-        octa_experience = st.selectbox("Experience with OCTA Imaging", OCTA_EXPERIENCE)
-        ai_familiarity = st.selectbox("Familiarity with AI in Medical Imaging", AI_FAMILIARITY)
-    institution = st.text_input("Institution/Hospital")
-
     if st.button("Start Assessment", type="primary", use_container_width=True):
-        if user_name:
-            st.session_state.user_info = {
-                "name": user_name,
-                "specialty": specialty,
-                "years_experience": years_experience,
-                "octa_experience": octa_experience,
-                "ai_familiarity": ai_familiarity,
-                "institution": institution,
-                "registration_timestamp": datetime.now().isoformat()
-            }
-            st.session_state.user_registered = True
-            st.rerun()
-        else:
-            st.error("Please enter your name to continue.")
+        st.session_state.assessment_started = True
+        st.rerun()
+
+def render_post_questionnaire():
+    st.markdown("Please provide the information below. This data is collected anonymously and will only be reported in aggregate.")
+    
+    with st.form(key="demographics_form"):
+        user_name = st.text_input("Full Name (for tracking purposes, will not be published)")
+        institution = st.text_input("Institution/Hospital")
+        col1, col2 = st.columns(2)
+        with col1:
+            specialty = st.selectbox("Medical Specialty", SPECIALTIES)
+            years_experience = st.selectbox("Years of Clinical Experience", EXPERIENCE_LEVELS)
+        with col2:
+            octa_experience = st.selectbox("Experience with OCTA Imaging", OCTA_EXPERIENCE)
+            ai_familiarity = st.selectbox("Familiarity with AI in Medical Imaging", AI_FAMILIARITY)
+        
+        submitted = st.form_submit_button("Submit and Complete Study", type="primary", use_container_width=True)
+        if submitted:
+            if user_name:
+                st.session_state.user_info = {
+                    "name": user_name,
+                    "specialty": specialty,
+                    "years_experience": years_experience,
+                    "octa_experience": octa_experience,
+                    "ai_familiarity": ai_familiarity,
+                    "institution": institution,
+                    "registration_timestamp": datetime.now().isoformat()
+                }
+                st.session_state.demographics_submitted = True
+                st.rerun()
+            else:
+                st.error("Please enter your name to complete the submission.")
 
 def render_ai_classification():
     if st.session_state.image_loaded and st.session_state.current_label:
@@ -44,11 +59,9 @@ def render_ai_classification():
             "PDR": "Proliferative Diabetic Retinopathy",
             "NPDR": "Non-Proliferative Diabetic Retinopathy",
             "Healthy": "Healthy Retina"
-        }[st.session_state.current_label]
-        
+        }.get(st.session_state.current_label, "Unknown Classification")
         st.markdown(f"""
         <div class="ai-classification-box">
-            <div class="classification-title">AI Classification</div>
             <div class="classification-main">{st.session_state.current_label}</div>
             <div class="classification-fullname">{full_name}</div>
         </div>
@@ -76,30 +89,20 @@ def render_explanation_column():
     if et == "graph":
         html = _image_to_html(st.session_state.current_explanation)
         st.markdown(html, unsafe_allow_html=True)
-        cp = st.session_state.current_csv_path
-        if cp:
+        csv_content = st.session_state.current_csv_content
+        if csv_content:
             try:
-                with open(cp, "r") as f:
-                    lines = [l.rstrip("\n") for l in f]
+                lines = csv_content.strip().split('\n')
                 feature_names = {
-                    "volume": "Vessel Volume",
-                    "length": "Vessel Length",
-                    "node1_degree": "Inward Connections",
-                    "node2_degree": "Outward Connections",
-                    "avgCrossSection": "Average Cross-Section",
-                    "distance": "Node Distance",
-                    "curveness": "Vessel Curvature",
-                    "avgRadiusAvg": "Average Radius",
-                    "avgRadiusStd": "Radius Variation",
-                    "roundnessAvg": "Vessel Roundness",
-                    "minRadiusAvg": "Minimum Radius",
-                    "hetero_degree": "Heterogeneous Degree",
+                    "volume": "Vessel Volume", "length": "Vessel Length", "node1_degree": "Inward Connections",
+                    "node2_degree": "Outward Connections", "avgCrossSection": "Average Cross-Section",
+                    "distance": "Node Distance", "curveness": "Vessel Curvature", "avgRadiusAvg": "Average Radius",
+                    "avgRadiusStd": "Radius Variation", "roundnessAvg": "Vessel Roundness",
+                    "minRadiusAvg": "Minimum Radius", "hetero_degree": "Heterogeneous Degree",
                 }
                 feats = []
                 try:
-                    start = lines.index(
-                        "Important Features for the Entire Graph:"
-                    ) + 1
+                    start = lines.index("Important Features for the Entire Graph:") + 1
                 except ValueError:
                     start = -1
                 if start >= 0:
@@ -116,16 +119,8 @@ def render_explanation_column():
                         if len(parts) >= 2:
                             feature_name = parts[0]
                             importance = parts[1]
-                            display_name = feature_names.get(
-                                feature_name,
-                                feature_name.replace("_", " ").title(),
-                            )
-                            feats.append(
-                                {
-                                    "Feature": display_name,
-                                    "Importance": f"{float(importance):.3f}",
-                                }
-                            )
+                            display_name = feature_names.get(feature_name, feature_name.replace("_", " ").title())
+                            feats.append({"Feature": display_name, "Importance": f"{float(importance):.3f}"})
                     if feats:
                         top_names = [f["Feature"] for f in feats[:3]]
                         if len(top_names) == 1:
@@ -133,11 +128,9 @@ def render_explanation_column():
                         elif len(top_names) == 2:
                             sentence = f"The two features that most influenced this prediction are {top_names[0]} and {top_names[1]}."
                         else:
-                            sentence = (
-                                f"The top three features contributing to this prediction are "
-                                    f"{top_names[0]}, {top_names[1]}, and {top_names[2]}."
-                                )
-                            st.markdown(sentence)
+                            sentence = (f"The top three features contributing to this prediction are "
+                                        f"{top_names[0]}, {top_names[1]}, and {top_names[2]}.")
+                        st.markdown(sentence)
             except Exception as e:
                 st.warning(f"Could not load feature data: {e}")
     else:
@@ -173,6 +166,6 @@ def render_footer():
     st.markdown("---")
     st.markdown(f"""
     <p style="text-align: center; color: #666; font-size: 12px; margin-top: 5px;">
-        OCTA DR Classification v1.5 | For Research Purposes Only
+        OCTA DR Classification v2.0 | For Research Purposes Only
     </p>
     """, unsafe_allow_html=True)

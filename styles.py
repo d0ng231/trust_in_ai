@@ -1,40 +1,35 @@
 CUSTOM_CSS = """
 <style>
+    .block-container {
+        /* Increased top padding to push all content below the fixed header */
+        padding: 6rem 1rem 2rem 1rem;
+    }
+
     .main {
         background-color: #f8f9fa;
     }
-
     .stApp {
         max-width: 1400px;
         margin: 0 auto;
     }
-
-    .block-container {
-        padding: 2rem 1rem 2rem 1rem;
-    }
-
     h1 {
         color: #1976d2;
         text-align: center;
         padding-bottom: 5px;
         margin-bottom: 5px;
     }
-
     h3 {
         color: #2e7d32;
     }
-
     h1, h2, h3, h4, h5, h6 {
         border-bottom: none !important;
         padding-bottom: 0 !important;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
     }
-
     .stMarkdown {
         margin-bottom: 0.25rem;
     }
-
     .stRadio {
         margin-bottom: 0.1rem;
     }
@@ -46,11 +41,9 @@ CUSTOM_CSS = """
     .stRadio > div {
         gap: 0.3rem;
     }
-
     .element-container {
         margin-bottom: 0.5rem;
     }
-
     .welcome-container {
         background-color: transparent;
         box-shadow: none;
@@ -58,7 +51,6 @@ CUSTOM_CSS = """
         margin: 0 0 2rem 0;
         text-align: left;
     }
-
     .ai-classification-box {
         background-color: #cfe2f3;
         padding: 16px;
@@ -67,7 +59,6 @@ CUSTOM_CSS = """
         margin-top: 15px;
         line-height: 1.4;
     }
-
     .classification-title {
         font-size: 14px;
         font-weight: 500;
@@ -76,23 +67,19 @@ CUSTOM_CSS = """
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
-
     .classification-main {
         font-size: 22px;
         font-weight: bold;
         color: #000000;
     }
-
     .classification-fullname {
         font-size: 16px;
         font-weight: 500;
         color: #424242;
     }
-
     .suggestion-container {
         padding: 0.5rem 0.1rem;
     }
-
     .suggestion-container .stButton > button {
         background-color: #f0f2f6;
         color: #333;
@@ -105,17 +92,13 @@ CUSTOM_CSS = """
         margin-bottom: 3px !important;
         transition: background-color 0.2s ease, border-color 0.2s ease;
     }
-
     .suggestion-container .stButton > button:hover {
         background-color: #e6e8eb !important;
         border-color: #b0b0b0 !important;
         color: #000;
     }
-
     .suggestion-container .stButton > button:focus {
         box-shadow: none !important;
     }
-
-    
 </style>
 """

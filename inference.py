@@ -59,7 +59,6 @@ def ask_question(image: Image.Image, question: str, classification: str | None =
         )
         return resp.choices[0].message.content.strip()
 
-# New function for streaming responses
 def ask_question_stream(image: Image.Image, question: str, classification: str | None = None):
     messages = []
     if classification:
