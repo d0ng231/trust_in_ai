@@ -1,4 +1,5 @@
 import streamlit as st
+import random
 from styles import CUSTOM_CSS
 from state_manager import initialize_session_state, set_current_case_from_dict, clear_responses, increment_assessment_count, add_chat_message
 from data_handler import prepare_assessment_data, fetch_metadata, synchronize_drive_data, append_assessment_locally, finalize_and_upload, fetch_password_on_demand
@@ -54,6 +55,7 @@ elif not st.session_state.all_cases_completed:
             synchronize_drive_data()
             entries = fetch_metadata()
             if entries:
+                random.shuffle(entries)
                 st.session_state.entries = entries
                 st.session_state.data_loaded = True
             else:
