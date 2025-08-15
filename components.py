@@ -4,6 +4,8 @@ from config import SPECIALTIES, EXPERIENCE_LEVELS, OCTA_EXPERIENCE, AI_FAMILIARI
 import io
 import base64
 import textwrap
+from PIL import ImageChops, Image
+import numpy as np
 
 def render_welcome_page():
     welcome_message = textwrap.dedent("""
@@ -70,6 +72,38 @@ def _image_to_html(img):
     img_str = base64.b64encode(buffered.getvalue()).decode()
     return f'<img src="data:image/png;base64,{img_str}" style="width:100%;border-radius:0px;" alt="Image"/>'
 
+def _crop_whitespace(img, threshold=245, margin=0):
+    """Crop near-white padding from image edges.
+
+    Args:
+        img: PIL.Image
+        threshold: 0-255 grayscale value; pixels < threshold considered foreground.
+        margin: extra pixels to retain around detected content.
+    """
+    try:
+        gray = img.convert('L')
+        arr = np.array(gray)
+        # Foreground mask: anything darker than threshold
+        mask = arr < threshold
+        if not mask.any():
+            return img  # nothing but white
+        ys, xs = np.where(mask)
+        y0, y1 = ys.min(), ys.max()
+        x0, x1 = xs.min(), xs.max()
+        # Apply optional margin
+        y0 = max(y0 - margin, 0)
+        x0 = max(x0 - margin, 0)
+        y1 = min(y1 + margin, arr.shape[0]-1)
+        x1 = min(x1 + margin, arr.shape[1]-1)
+        # Add 1 to include last index in crop box
+        cropped = img.crop((x0, y0, x1 + 1, y1 + 1))
+        # Avoid accidental over-crop (e.g., if crop removed < 2px border total)
+        if abs(cropped.width - img.width) <= 2 and abs(cropped.height - img.height) <= 2:
+            return img
+        return cropped
+    except Exception:
+        return img
+
 def render_image_column():
     st.markdown("### OCTA Scan")
     if st.session_state.image_loaded and st.session_state.current_image:
@@ -83,9 +117,35 @@ def render_explanation_column():
     if et == "text":
         return
     st.markdown("### Explanation")
-    if et == "graph":
-        html = _image_to_html(st.session_state.current_explanation)
+    if et in ("graph", "gradcam"):
+        # Show explanation image (crop white borders for graph explanations and maintain width)
+        exp_img = st.session_state.current_explanation
+        if et == "graph" and exp_img is not None:
+            exp_img = _crop_whitespace(exp_img)
+            try:
+                # Match original OCTA image width
+                if 'current_image' in st.session_state and st.session_state.current_image is not None:
+                    target_w = st.session_state.current_image.width
+                    if target_w > 0 and exp_img.width != target_w:
+                        new_h = int(exp_img.height * (target_w / exp_img.width))
+                        exp_img = exp_img.resize((target_w, max(new_h,1)), Image.LANCZOS)
+            except Exception:
+                pass
+        html = _image_to_html(exp_img)
         st.markdown(html, unsafe_allow_html=True)
+        # Horizontal color bar legend
+        st.markdown(
+            """
+            <div style='width:100%;margin-top:6px;'>
+              <div style='height:18px;width:100%;background:linear-gradient(to right, rgba(0,0,255,0.85), #00ffff, #00ff00, yellow, #ff7f00, #ff0000);border:1px solid #999;border-radius:4px;'></div>
+              <div style='display:flex;justify-content:space-between;font-size:11px;color:#555;margin-top:2px;'>
+                <span>Less Important</span>
+                <span>More Important</span>
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
         csv_content = st.session_state.current_csv_content
         if csv_content:
             try:
@@ -118,16 +178,16 @@ def render_explanation_column():
                             importance = parts[1]
                             display_name = feature_names.get(feature_name, feature_name.replace("_", " ").title())
                             feats.append({"Feature": display_name, "Importance": f"{float(importance):.3f}"})
-                    if feats:
-                        top_names = [f["Feature"] for f in feats[:3]]
-                        if len(top_names) == 1:
-                            sentence = f"The key feature leading to this prediction is {top_names[0]}."
-                        elif len(top_names) == 2:
-                            sentence = f"The two features that most influenced this prediction are {top_names[0]} and {top_names[1]}."
-                        else:
-                            sentence = (f"The top three features contributing to this prediction are "
-                                        f"{top_names[0]}, {top_names[1]}, and {top_names[2]}.")
-                        st.markdown(sentence)
+                if feats:
+                    top_names = [f["Feature"] for f in feats[:3]]
+                    if len(top_names) == 1:
+                        sentence = f"The key feature leading to this prediction is {top_names[0]}."
+                    elif len(top_names) == 2:
+                        sentence = f"The two features that most influenced this prediction are {top_names[0]} and {top_names[1]}."
+                    else:
+                        sentence = (f"The top three features contributing to this prediction are "
+                                    f"{top_names[0]}, {top_names[1]}, and {top_names[2]}.")
+                    st.markdown(sentence)
             except Exception as e:
                 st.warning(f"Could not load feature data: {e}")
     else:
@@ -148,16 +208,16 @@ def render_questions_column():
             st.session_state.responses['correct_label'] = q1b
         q2 = st.radio("**2. Rate your confidence in this prediction.**", likert, key=f"q2_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['confidence'] = q2
-        q3 = st.radio("**3. Is the explanation highlighting important features?**", likert, key=f"q3_{st.session_state.assessments_count}", horizontal=True)
+        q3 = st.radio("**3. Is the explanation highlighting important anatomical or pathological features?**", likert, key=f"q3_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['features_highlighted'] = q3
         q4 = st.radio("**4. Is this explanation highlighting areas that are relevant to the diagnosis?**", likert, key=f"q4_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['localization_correct'] = q4
         q5 = st.radio("**5. Do you like this kind of explanation?**", likert, key=f"q5_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['explanation_like'] = q5
-        q6 = st.radio("**6. Does the explanation increase your trust in the model's prediction?**", likert, key=f"q6_{st.session_state.assessments_count}", horizontal=True)
+        q6 = st.radio("**6. Does the explanation increase your confidence in the model's prediction?**", likert, key=f"q6_{st.session_state.assessments_count}", horizontal=True)
         st.session_state.responses['trust_increased'] = q6
-        q7 = st.radio("**7. Will this model help you save time?**", likert, key=f"q7_{st.session_state.assessments_count}", horizontal=True)
-        st.session_state.responses['time_saving'] = q7
+        q7 = st.radio("**7. Does this prediction + explanation help you interpret this image?**", likert, key=f"q7_{st.session_state.assessments_count}", horizontal=True)
+        st.session_state.responses['interpret_help'] = q7
 
 def render_footer():
     st.markdown("---")

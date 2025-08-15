@@ -30,7 +30,10 @@ def load_all_assessment_data():
         return pd.DataFrame()
         
     df = pd.DataFrame(all_assessments)
-    likert_cols = ['confidence', 'features_highlighted', 'localization_correct', 'explanation_like', 'trust_increased', 'time_saving']
+    # Backward compatibility: legacy key 'time_saving' replaced by 'interpret_help'
+    if 'interpret_help' not in df.columns and 'time_saving' in df.columns:
+        df['interpret_help'] = df['time_saving']
+    likert_cols = ['confidence', 'features_highlighted', 'localization_correct', 'explanation_like', 'trust_increased', 'interpret_help']
     for col in likert_cols:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
@@ -87,7 +90,7 @@ def render_overall_performance(df):
         'localization_correct': "Explanation Highlights Relevant Areas",
         'explanation_like': "Likability of the Explanation",
         'trust_increased': "Explanation Increased Trust",
-        'time_saving': "AI Will Help Save Time"
+        'interpret_help': "Prediction + Explanation Helps Image Interpretation"
     }
     for col, title in likert_cols.items():
         if col in df.columns:
@@ -108,9 +111,12 @@ def render_explanation_comparison(df):
         'localization_correct': "Explanation Highlights Relevant Areas",
         'explanation_like': "Likability of the Explanation",
         'trust_increased': "Explanation Increased Trust",
-        'time_saving': "AI Will Help Save Time"
+        'interpret_help': "Prediction + Explanation Helps Image Interpretation"
     }
     st.subheader("Average Likert Scores by Explanation Type")
+    # Ensure backward compatibility for old datasets
+    if 'interpret_help' not in df.columns and 'time_saving' in df.columns:
+        df['interpret_help'] = df['time_saving']
     avg_scores = df.groupby('explanation_type')[list(likert_cols.keys())].mean().reset_index()
     avg_scores_melted = avg_scores.melt(id_vars='explanation_type', var_name='Metric', value_name='Average Score')
     fig = px.bar(avg_scores_melted, x='Metric', y='Average Score', color='explanation_type', barmode='group',

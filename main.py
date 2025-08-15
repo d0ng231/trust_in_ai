@@ -5,7 +5,8 @@ from state_manager import initialize_session_state, set_current_case_from_dict, 
 from data_handler import prepare_assessment_data, fetch_metadata, synchronize_drive_data, append_assessment_locally, finalize_and_upload, fetch_password_on_demand
 from image_loader import load_and_package_entry
 from components import render_welcome_page, render_post_questionnaire, render_ai_classification, render_image_column, render_explanation_column, render_questions_column, render_footer
-from inference import ask_question_stream
+from inference import ask_question_stream, generate_explanation
+from config import GENERATE_LIVE_EXPLANATION
 from evaluation import render_evaluation_page
 
 def load_and_manage_cases():
@@ -76,9 +77,20 @@ elif not st.session_state.all_cases_completed:
             if st.session_state.current_explanation_type == "text":
                 st.markdown("### Explanation")
                 chat = st.container(height=470, border=True)
-                for m in st.session_state.chat_history:
-                    with chat.chat_message(name=m["role"]):
-                        st.markdown(m["content"])
+                # Auto-stream initial explanation if live generation enabled and no AI message yet
+                if GENERATE_LIVE_EXPLANATION and not any(m["role"] == "ai" for m in st.session_state.chat_history):
+                    init_prompt = (
+                        f"Provide a concise explanation for why this OCTA image is classified as {st.session_state.current_label}. "
+                        "Reference specific regions or vascular patterns briefly."
+                    )
+                    with chat.chat_message("ai"):
+                        resp = st.write_stream(ask_question_stream(st.session_state.current_image, init_prompt, st.session_state.current_label))
+                    add_chat_message("ai", resp)
+                else:
+                    # Render existing history only when not in the special first-stream case
+                    for m in st.session_state.chat_history:
+                        with chat.chat_message(name=m["role"]):
+                            st.markdown(m["content"])
                 st.markdown('<p style="font-weight:500;margin:0.1rem 0;">Suggested Questions:</p>', unsafe_allow_html=True)
                 st.markdown('<div class="suggestion-container">', unsafe_allow_html=True)
                 sug = ["What signs of diabetic retinopathy do you see?", "Explain the vessel patterns in this image.", "What areas show abnormal vasculature?"]

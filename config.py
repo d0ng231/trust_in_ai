@@ -24,7 +24,7 @@ DRIVE_FOLDER_KEYS = {
     "results": "results"
 }
 
-GENERATE_LIVE_EXPLANATION = False
+GENERATE_LIVE_EXPLANATION = True
 EVALUATION_MODE = False
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -39,6 +39,8 @@ SYSTEM_PROMPT_TEMPLATE = (
     "The OCTA image has been classified as **{classification}**. "
     "Stick to that classification and focus on specific regions of the image "
     "that support it."
+    "Use clocking to highlight regions. Use clinical terms and avoid jargon, in a way that is understandable to a medical professional. "
+    "For irrelevant questions, respond with 'I cannot answer that.' "
 )
 
 for path in [LOCAL_DATA_DIR, LOCAL_IMAGE_DIR, LOCAL_OVERLAY_DIR, LOCAL_CSV_DIR, LOCAL_GRADCAM_DIR, LOCAL_RESULTS_DIR]:

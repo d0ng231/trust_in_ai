@@ -91,6 +91,6 @@ def ask_question_stream(image: Image.Image, question: str, classification: str |
 def generate_explanation(image: Image.Image, classification: str) -> str:
     prompt = (
         f"Generate a concise paragraph explaining why this OCTA image is classified as "
-        f"{classification}. Focus on the specific regions that support this diagnosis."
+        f"{classification}. Focus on the specific regions that support this diagnosis. Look closely at vessel patterns, abnormalities, and other relevant features in specific areas of the image. "
     )
     return ask_question(image, prompt, classification)

@@ -10,7 +10,8 @@ from pathlib import Path
 from config import (
     APPSCRIPT_URL, DRIVE_FOLDER_KEYS, ENTRIES_FILE, PASSWORD_FILE_NAME,
     LOCAL_METADATA_PATH, LOCAL_PASSWORD_PATH, LOCAL_IMAGE_DIR,
-    LOCAL_OVERLAY_DIR, LOCAL_CSV_DIR, LOCAL_GRADCAM_DIR, LOCAL_RESULTS_DIR, LOCAL_DATA_DIR
+    LOCAL_OVERLAY_DIR, LOCAL_CSV_DIR, LOCAL_GRADCAM_DIR, LOCAL_RESULTS_DIR, LOCAL_DATA_DIR,
+    GENERATE_LIVE_EXPLANATION
 )
 
 def _make_post_request(payload):
@@ -108,7 +109,8 @@ def synchronize_drive_data():
     for entry in entries:
         if entry.get('image_id'):
             all_drive_paths.add(entry['image_id'])
-        if entry.get('explanation_type') != 'text' and entry.get('explanation'):
+        # Skip downloading pre-generated explanation assets if generating live explanations
+        if (not GENERATE_LIVE_EXPLANATION) and entry.get('explanation_type') != 'text' and entry.get('explanation'):
             all_drive_paths.add(entry['explanation'])
         if entry.get('csv_path'):
             all_drive_paths.add(entry['csv_path'])
