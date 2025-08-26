@@ -3,7 +3,7 @@ from PIL import Image
 import base64, io
 from config import SYSTEM_PROMPT_TEMPLATE
 
-client = OpenAI(api_key="0", base_url="https://2d3fb8e2b97e.ngrok-free.app/v1")
+client = OpenAI(api_key="0", base_url="https://53d0ed294f26.ngrok-free.app/v1")
 MODEL_ID = "/midtier/paetzollab/scratch/chl4044/LLaMA-Factory/output/intern_vl_3-38b_lora_sft"
 
 
