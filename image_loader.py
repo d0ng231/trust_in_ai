@@ -25,17 +25,18 @@ def load_octa_entry():
         return None, None, None, None, None, None
     image = Image.open(local_image_path)
     explanation = None
-    if GENERATE_LIVE_EXPLANATION:
-        # Force text explanation; actual content will be streamed in UI (avoid pre-loading full text)
-        explanation_type = 'text'
-        explanation = None
+    if explanation_type in ['image', 'graph', 'gradcam']:
+        # Always attempt to load image-based explanations regardless of live generation toggle.
+        local_exp_path = get_local_path(exp_path_or_text)
+        if local_exp_path and local_exp_path.exists():
+            explanation = Image.open(local_exp_path)
+        else:
+            st.warning(f"Explanation image not found: {exp_path_or_text}")
     else:
-        if explanation_type in ['image', 'graph', 'gradcam']:
-            local_exp_path = get_local_path(exp_path_or_text)
-            if local_exp_path and local_exp_path.exists():
-                explanation = Image.open(local_exp_path)
-            else:
-                st.warning(f"Explanation image not found: {exp_path_or_text}")
+        # Text explanation: if live generation enabled, defer actual content generation in UI.
+        if GENERATE_LIVE_EXPLANATION:
+            explanation_type = 'text'
+            explanation = None
         else:
             explanation = exp_path_or_text
     csv_content = None

@@ -109,9 +109,11 @@ def synchronize_drive_data():
     for entry in entries:
         if entry.get('image_id'):
             all_drive_paths.add(entry['image_id'])
-        # Skip downloading pre-generated explanation assets if generating live explanations
-        if (not GENERATE_LIVE_EXPLANATION) and entry.get('explanation_type') != 'text' and entry.get('explanation'):
+        # Always download non-text explanation assets (graphs/gradcam/images) so they can be displayed.
+        # Only skip downloading text explanation content when live generation is enabled.
+        if entry.get('explanation_type') != 'text' and entry.get('explanation'):
             all_drive_paths.add(entry['explanation'])
+        # CSV feature importance files are still required regardless of live generation.
         if entry.get('csv_path'):
             all_drive_paths.add(entry['csv_path'])
     missing_paths = [p for p in all_drive_paths if not (lp := get_local_path(p)) or not lp.exists()]
